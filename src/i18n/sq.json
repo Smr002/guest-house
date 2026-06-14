@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "title": "Gjirokastër Guest House - Qëndroni në Qytetin e Gurtë të Shqipërisë",
+    "description": "Një bujtinë osmane e restauruar në Gjirokastër, qytet i Trashëgimisë Botërore të UNESCO-s. 4 dhoma, mëngjes në oborr, pamje nga kalaja. Rezervoni direkt."
+  },
+  "nav": {
+    "home": "Kreu",
+    "rooms": "Dhomat",
+    "gallery": "Galeria",
+    "experiences": "Përvoja",
+    "contact": "Kontakt",
+    "book": "Rezervo qëndrimin"
+  },
+  "hero": {
+    "heading": "Qëndroni mes gurëve të Gjirokastrës",
+    "subheading": "4 dhoma · Shtëpi osmane · Mëngjes i përfshirë",
+    "imageAlt": "Oborr guri i një bujtine të restauruar në Gjirokastër",
+    "ctaBook": "Rezervo qëndrimin",
+    "ctaRooms": "Shiko dhomat"
+  },
+  "about": {
+    "eyebrow": "Shtëpia",
+    "heading": "Një histori e gdhendur në gur",
+    "subheading": "E restauruar. E gjallë. E juaja për disa ditë.",
+    "body": "E ndërtuar në fillim të shekullit XIX gjatë periudhës osmane, kjo shtëpi qytetare ka strehuar tregtarë, dijetarë dhe familje për dy shekuj. E restauruar për katër vjet me gur vendor dhe zdrukthëtari origjinale druri, ajo u rihap si bujtinë në vitin 2012.",
+    "facts": {
+      "built": "Ndërtuar",
+      "builtValue": "rreth 1820",
+      "rooms": "Dhoma",
+      "roomsValue": "4",
+      "altitude": "Lartësia",
+      "altitudeValue": "300 m",
+      "breakfast": "Mëngjesi",
+      "breakfastValue": "I përfshirë"
+    }
+  },
+  "rooms": {
+    "eyebrow": "Akomodimi",
+    "heading": "Dhomat tona",
+    "subheading": "Katër dhoma, secila me karakterin e vet.",
+    "perNight": "/ natë",
+    "guests": "{{count}} mysafirë",
+    "size": "{{size}} m²",
+    "viewDetails": "Shiko dhomën",
+    "bookNow": "Rezervo këtë dhomë",
+    "amenityLabels": {
+      "wifi": "Wi-Fi falas",
+      "private-bathroom": "Banjë private",
+      "air-conditioning": "Kondicioner",
+      "breakfast": "Mëngjes i përfshirë",
+      "castle-view": "Pamje nga kalaja",
+      "courtyard-view": "Pamje nga oborri",
+      "city-view": "Pamje nga qyteti",
+      "king-bed": "Krevat king-size",
+      "twin-beds": "Krevate teke",
+      "balcony": "Ballkon privat",
+      "smart-tv": "Smart TV",
+      "safe": "Kasafortë në dhomë",
+      "mini-fridge": "Mini frigorifer"
+    }
+  },
+  "gallery": {
+    "eyebrow": "Galeria",
+    "heading": "Shtëpia dhe qyteti",
+    "subheading": "Mure guri, rrugë me kalldrëm, dritë kalaje."
+  },
+  "experiences": {
+    "eyebrow": "Rreth nesh",
+    "heading": "Gjirokastra është vetë destinacioni",
+    "subheading": "Çdo gjë është në distancë ecjeje.",
+    "walkingMinutes": "{{count}} min në këmbë",
+    "drivingMinutes": "{{count}} min me makinë"
+  },
+  "testimonials": {
+    "eyebrow": "Mysafirët",
+    "heading": "Çfarë thonë ata",
+    "items": [
+      {
+        "quote": "Shtëpia ndihej historike pa humbur rehatinë. Mëngjesi në oborr është momenti që ende e kujtojmë.",
+        "name": "Mara & Luis",
+        "location": "Spanjë"
+      },
+      {
+        "quote": "Një bazë e qetë mbi pazar, me mikpritës të dashur dhe pamje nga kalaja që e bënte çdo mëngjes të veçantë.",
+        "name": "Elena",
+        "location": "Greqi"
+      },
+      {
+        "quote": "E restauruar bukur, shumë e pastër dhe pranë çdo gjëje. Ecnim kudo dhe flinim mrekullisht.",
+        "name": "Thomas",
+        "location": "Francë"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Rezervo direkt",
+    "heading": "Na kontaktoni",
+    "subheading": "Përgjigjemi brenda pak orësh. Rezervoni direkt për çmimin më të mirë.",
+    "info": {
+      "addressLabel": "Adresa",
+      "phoneLabel": "Telefoni",
+      "emailLabel": "Email",
+      "checkinLabel": "Check-in",
+      "checkoutLabel": "Check-out",
+      "receptionLabel": "Orari i recepsionit"
+    },
+    "form": {
+      "name": "Emri juaj",
+      "email": "Adresa e emailit",
+      "checkin": "Data e mbërritjes",
+      "checkout": "Data e largimit",
+      "guests": "Numri i mysafirëve",
+      "room": "Preferenca e dhomës",
+      "roomAny": "Pa preferencë",
+      "message": "Mesazh (opsional)",
+      "submit": "Dërgo kërkesën",
+      "whatsapp": "Bisedo në WhatsApp",
+      "success": "Mesazhi u dërgua. Do t'ju kontaktojmë së shpejti.",
+      "error": "Diçka shkoi keq. Ju lutemi provoni përsëri ose na kontaktoni direkt."
+    }
+  },
+  "footer": {
+    "tagline": "Një shtëpi guri në qytetin më tregimtar të Shqipërisë.",
+    "linksLabel": "Lidhje të shpejta",
+    "rights": "Të gjitha të drejtat e rezervuara."
+  },
+  "language": {
+    "select": "Gjuha",
+    "current": "Gjuha aktuale"
+  },
+  "accessibility": {
+    "skipToContent": "Kalo te përmbajtja kryesore",
+    "openMenu": "Hap menunë e navigimit",
+    "closeMenu": "Mbyll menunë e navigimit",
+    "roomImage": "Foto e {{name}}",
+    "galleryImage": "Foto galerie {{index}}"
+  }
+}

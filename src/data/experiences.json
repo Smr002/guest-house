@@ -1,0 +1,238 @@
+{
+  "experiences": [
+    {
+      "id": "gjirokastra-castle",
+      "category": "history",
+      "distanceMin": 8,
+      "travelMode": "walk",
+      "icon": "M4 21V10l8-5 8 5v11h-5v-6H9v6H4Zm8-13.7L6 11v8h1v-6h10v6h1v-8l-6-3.7Z",
+      "translations": {
+        "en": {
+          "name": "Gjirokastra Castle",
+          "description": "The fortress dominates the ridge above the old town, with sweeping views over the Drino Valley and centuries of local history in its stone halls.",
+          "tip": "Go late in the afternoon for softer light and cooler air."
+        },
+        "sq": {
+          "name": "Kalaja e Gjirokastrës",
+          "description": "Kalaja sundon kreshtën mbi qytetin e vjetër, me pamje të gjera mbi Luginën e Drinos dhe shekuj historie në sallat prej guri.",
+          "tip": "Shkoni pasdite vonë për dritë më të butë dhe ajër më të freskët."
+        },
+        "es": {
+          "name": "Castillo de Gjirokastra",
+          "description": "La fortaleza domina la cresta sobre el casco antiguo, con vistas amplias al valle del Drino y siglos de historia local en sus salas de piedra.",
+          "tip": "Ve al final de la tarde para disfrutar de una luz más suave y menos calor."
+        },
+        "fr": {
+          "name": "Château de Gjirokastra",
+          "description": "La forteresse domine la crête au-dessus de la vieille ville, avec de vastes vues sur la vallée du Drino et des siècles d'histoire dans ses salles de pierre.",
+          "tip": "Allez-y en fin d'après-midi pour une lumière plus douce et un air plus frais."
+        },
+        "it": {
+          "name": "Castello di Gjirokastra",
+          "description": "La fortezza domina il crinale sopra il centro storico, con ampie vedute sulla Valle del Drino e secoli di storia nelle sue sale in pietra.",
+          "tip": "Andate nel tardo pomeriggio per una luce più morbida e aria più fresca."
+        },
+        "el": {
+          "name": "Κάστρο του Αργυροκάστρου",
+          "description": "Το φρούριο δεσπόζει πάνω από την παλιά πόλη, με πανοραμική θέα στην Κοιλάδα του Δρίνου και αιώνες ιστορίας στις πέτρινες αίθουσές του.",
+          "tip": "Πηγαίνετε αργά το απόγευμα για πιο απαλό φως και δροσερότερη ατμόσφαιρα."
+        }
+      }
+    },
+    {
+      "id": "old-bazaar",
+      "category": "culture",
+      "distanceMin": 5,
+      "travelMode": "walk",
+      "icon": "M5 5h14l1 5H4l1-5Zm1 7h12v8H6v-8Zm2 2v4h3v-4H8Zm5 0v4h3v-4h-3Z",
+      "translations": {
+        "en": {
+          "name": "Old Bazaar",
+          "description": "Pazari i Vjetër is a compact weave of stone streets, craft shops, cafes, and everyday city life just below the castle.",
+          "tip": "Visit before lunch, then linger over coffee near the crossroads."
+        },
+        "sq": {
+          "name": "Pazari i Vjetër",
+          "description": "Pazari i Vjetër është një ndërthurje rrugësh guri, dyqanesh artizanale, kafenesh dhe jete të përditshme pak poshtë kalasë.",
+          "tip": "Vizitojeni para drekës dhe më pas rrini për kafe pranë kryqëzimit."
+        },
+        "es": {
+          "name": "Antiguo Bazar",
+          "description": "El Pazari i Vjetër es una red compacta de calles de piedra, tiendas artesanas, cafés y vida cotidiana bajo el castillo.",
+          "tip": "Visítalo antes de comer y quédate luego con un café cerca del cruce."
+        },
+        "fr": {
+          "name": "Vieux Bazar",
+          "description": "Le Pazari i Vjetër forme un entrelacs de rues de pierre, d'ateliers, de cafés et de vie quotidienne juste sous le château.",
+          "tip": "Passez avant le déjeuner, puis prenez le temps d'un café près du carrefour."
+        },
+        "it": {
+          "name": "Vecchio Bazar",
+          "description": "Il Pazari i Vjetër è un intreccio compatto di strade in pietra, botteghe artigiane, caffè e vita quotidiana sotto il castello.",
+          "tip": "Visitatelo prima di pranzo e fermatevi poi per un caffè vicino all'incrocio."
+        },
+        "el": {
+          "name": "Παλιό Παζάρι",
+          "description": "Το Pazari i Vjetër είναι ένα πυκνό πλέγμα από πέτρινους δρόμους, εργαστήρια, καφέ και καθημερινή ζωή κάτω από το κάστρο.",
+          "tip": "Επισκεφθείτε το πριν το μεσημέρι και μείνετε για καφέ κοντά στο σταυροδρόμι."
+        }
+      }
+    },
+    {
+      "id": "ethnographic-museum",
+      "category": "history",
+      "distanceMin": 6,
+      "travelMode": "walk",
+      "icon": "M4 20h16v-2H4v2Zm2-3h12V8l-6-4-6 4v9Zm3-2V9.5l3-2 3 2V15H9Z",
+      "translations": {
+        "en": {
+          "name": "Ethnographic Museum",
+          "description": "A traditional house museum that shows how Gjirokastra families lived, hosted, cooked, and celebrated inside these layered stone homes.",
+          "tip": "Pair it with a walk through the surrounding Manalat quarter."
+        },
+        "sq": {
+          "name": "Muzeu Etnografik",
+          "description": "Një shtëpi-muze tradicionale që tregon si jetonin, prisnin mysafirë, gatuanin dhe festonin familjet gjirokastrite në këto banesa guri.",
+          "tip": "Kombinojeni me një shëtitje në lagjen Manalat përreth."
+        },
+        "es": {
+          "name": "Museo Etnográfico",
+          "description": "Una casa tradicional convertida en museo que muestra cómo vivían, recibían, cocinaban y celebraban las familias de Gjirokastra.",
+          "tip": "Combínalo con un paseo por el cercano barrio de Manalat."
+        },
+        "fr": {
+          "name": "Musée ethnographique",
+          "description": "Une maison traditionnelle transformée en musée qui montre comment les familles de Gjirokastra vivaient, recevaient, cuisinaient et célébraient.",
+          "tip": "Associez la visite à une promenade dans le quartier voisin de Manalat."
+        },
+        "it": {
+          "name": "Museo Etnografico",
+          "description": "Una casa tradizionale trasformata in museo che racconta come le famiglie di Gjirokastra vivevano, ospitavano, cucinavano e festeggiavano.",
+          "tip": "Abbinatelo a una passeggiata nel vicino quartiere di Manalat."
+        },
+        "el": {
+          "name": "Εθνογραφικό Μουσείο",
+          "description": "Ένα παραδοσιακό σπίτι-μουσείο που δείχνει πώς ζούσαν, φιλοξενούσαν, μαγείρευαν και γιόρταζαν οι οικογένειες του Αργυροκάστρου.",
+          "tip": "Συνδυάστε το με έναν περίπατο στη γειτονιά Manalat."
+        }
+      }
+    },
+    {
+      "id": "drino-valley-viewpoint",
+      "category": "nature",
+      "distanceMin": 15,
+      "travelMode": "walk",
+      "icon": "M3 19h18L14 8l-4 6-2-3-5 8Zm11.2-4 2.5 4H7l3-4.5 2 3 2.2-2.5Z",
+      "translations": {
+        "en": {
+          "name": "Drino Valley Viewpoint",
+          "description": "A quiet lookout above the rooftops where the old town drops into olive groves, river plain, and mountain ridges.",
+          "tip": "Bring water and shoes with grip for the stone lanes."
+        },
+        "sq": {
+          "name": "Pika e Pamjes së Luginës së Drinos",
+          "description": "Një pikë e qetë mbi çati, ku qyteti i vjetër zbret drejt ullishteve, fushës së lumit dhe kreshtave malore.",
+          "tip": "Merrni ujë dhe këpucë me taban të mirë për rrugicat prej guri."
+        },
+        "es": {
+          "name": "Mirador del Valle del Drino",
+          "description": "Un mirador tranquilo sobre los tejados, donde el casco antiguo cae hacia olivares, llanura fluvial y montañas.",
+          "tip": "Lleva agua y calzado con buen agarre para las calles de piedra."
+        },
+        "fr": {
+          "name": "Belvédère de la vallée du Drino",
+          "description": "Un point de vue calme au-dessus des toits, là où la vieille ville descend vers les oliveraies, la plaine du fleuve et les montagnes.",
+          "tip": "Prévoyez de l'eau et des chaussures adhérentes pour les ruelles de pierre."
+        },
+        "it": {
+          "name": "Belvedere sulla Valle del Drino",
+          "description": "Un punto panoramico tranquillo sopra i tetti, dove il centro storico scende verso uliveti, pianura fluviale e montagne.",
+          "tip": "Portate acqua e scarpe con buona aderenza per le strade in pietra."
+        },
+        "el": {
+          "name": "Παρατηρητήριο Κοιλάδας Δρίνου",
+          "description": "Ένα ήσυχο σημείο πάνω από τις στέγες, εκεί όπου η παλιά πόλη κατεβαίνει προς ελαιώνες, ποτάμια πεδιάδα και βουνά.",
+          "tip": "Πάρτε νερό και παπούτσια με καλή πρόσφυση για τα πέτρινα σοκάκια."
+        }
+      }
+    },
+    {
+      "id": "ismail-kadare-birthplace",
+      "category": "culture",
+      "distanceMin": 4,
+      "travelMode": "walk",
+      "icon": "M6 4h10l2 2v14H6V4Zm2 2v12h8V7h-3V6H8Zm2 4h4v1.5h-4V10Zm0 3h4v1.5h-4V13Z",
+      "translations": {
+        "en": {
+          "name": "Ismail Kadare Birthplace",
+          "description": "The restored childhood home of Albania's most celebrated writer offers an intimate look at literature, memory, and the city that shaped him.",
+          "tip": "Ask us for the quickest lane from the house; it is close but easy to miss."
+        },
+        "sq": {
+          "name": "Shtëpia e Lindjes së Ismail Kadaresë",
+          "description": "Shtëpia e restauruar e fëmijërisë së shkrimtarit më të njohur shqiptar sjell një vështrim intim mbi letërsinë, kujtesën dhe qytetin që e formoi.",
+          "tip": "Na pyesni për rrugicën më të shkurtër; është afër, por kalon lehtë pa u vënë re."
+        },
+        "es": {
+          "name": "Casa natal de Ismail Kadare",
+          "description": "La casa restaurada de la infancia del escritor albanés más célebre ofrece una mirada íntima a la literatura, la memoria y la ciudad que lo formó.",
+          "tip": "Pregúntanos por la calle más rápida desde la casa; está cerca, pero es fácil pasarla por alto."
+        },
+        "fr": {
+          "name": "Maison natale d'Ismail Kadare",
+          "description": "La maison d'enfance restaurée du plus célèbre écrivain albanais offre un regard intime sur la littérature, la mémoire et la ville qui l'a façonné.",
+          "tip": "Demandez-nous la ruelle la plus rapide depuis la maison; elle est proche mais facile à manquer."
+        },
+        "it": {
+          "name": "Casa natale di Ismail Kadare",
+          "description": "La casa d'infanzia restaurata dello scrittore albanese più celebrato offre uno sguardo intimo su letteratura, memoria e sulla città che lo ha formato.",
+          "tip": "Chiedeteci il vicolo più rapido dalla casa; è vicino, ma facile da non notare."
+        },
+        "el": {
+          "name": "Γενέτειρα του Ισμαήλ Κανταρέ",
+          "description": "Το αποκατεστημένο παιδικό σπίτι του πιο γνωστού Αλβανού συγγραφέα προσφέρει μια προσωπική ματιά στη λογοτεχνία, τη μνήμη και την πόλη που τον διαμόρφωσε.",
+          "tip": "Ρωτήστε μας για το πιο σύντομο σοκάκι από το σπίτι· είναι κοντά αλλά εύκολα το προσπερνά κανείς."
+        }
+      }
+    },
+    {
+      "id": "uji-i-ftohte",
+      "category": "nature",
+      "distanceMin": 20,
+      "travelMode": "drive",
+      "icon": "M12 3s6 6.4 6 10a6 6 0 0 1-12 0c0-3.6 6-10 6-10Zm0 16a4 4 0 0 0 4-4c0-1.7-2.2-4.9-4-7.2C10.2 10.1 8 13.3 8 15a4 4 0 0 0 4 4Z",
+      "translations": {
+        "en": {
+          "name": "Uji i Ftohtë",
+          "description": "Cold springs, shade, and mountain air make this a refreshing short drive when summer afternoons grow warm in the city.",
+          "tip": "Best after a slow lunch or on the way toward Tepelena."
+        },
+        "sq": {
+          "name": "Uji i Ftohtë",
+          "description": "Burimet e ftohta, hija dhe ajri malor e bëjnë këtë ndalesë ideale kur pasditet e verës bëhen të nxehta në qytet.",
+          "tip": "Më mirë pas një dreke të qetë ose rrugës drejt Tepelenës."
+        },
+        "es": {
+          "name": "Uji i Ftohtë",
+          "description": "Manantiales fríos, sombra y aire de montaña convierten este lugar en una escapada refrescante cuando las tardes de verano calientan la ciudad.",
+          "tip": "Ideal después de una comida tranquila o de camino hacia Tepelena."
+        },
+        "fr": {
+          "name": "Uji i Ftohtë",
+          "description": "Sources fraîches, ombre et air de montagne en font une courte escapade parfaite lorsque les après-midi d'été deviennent chauds en ville.",
+          "tip": "Idéal après un déjeuner tranquille ou sur la route de Tepelena."
+        },
+        "it": {
+          "name": "Uji i Ftohtë",
+          "description": "Sorgenti fredde, ombra e aria di montagna rendono questa breve gita perfetta quando i pomeriggi estivi in città diventano caldi.",
+          "tip": "Ideale dopo un pranzo lento o lungo la strada verso Tepelena."
+        },
+        "el": {
+          "name": "Uji i Ftohtë",
+          "description": "Κρύες πηγές, σκιά και ορεινός αέρας κάνουν αυτή τη σύντομη διαδρομή ιδανική όταν τα καλοκαιρινά απογεύματα ζεσταίνουν την πόλη.",
+          "tip": "Καλύτερα μετά από ένα αργό γεύμα ή στον δρόμο προς την Τεπελένα."
+        }
+      }
+    }
+  ]
+}

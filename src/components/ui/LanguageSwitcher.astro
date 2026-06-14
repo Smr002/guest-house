@@ -1,0 +1,52 @@
+---
+import { LOCALE_CONFIG, SUPPORTED_LOCALES, type SupportedLocale } from '@app-types/i18n';
+import type { Translations } from '@app-types/translations';
+import { localePath } from '@utils/i18n';
+
+interface Props {
+  currentLang: SupportedLocale;
+  translations: Translations;
+  selectId: string;
+}
+
+const { currentLang, translations, selectId } = Astro.props;
+---
+
+<div class="relative">
+  <label for={selectId} class="sr-only">{translations.language.select}</label>
+  <select
+    id={selectId}
+    data-language-select
+    class="min-h-10 appearance-none rounded border border-light-stone bg-stone-white px-3 py-2 pr-9 text-sm text-mountain-pine shadow-sm transition focus:outline-none focus:ring-2 focus:ring-old-brass"
+    aria-label={translations.language.current}
+  >
+    {
+      SUPPORTED_LOCALES.map((locale: SupportedLocale) => (
+        <option value={localePath(locale)} selected={locale === currentLang}>
+          {LOCALE_CONFIG[locale].flag} {LOCALE_CONFIG[locale].label}
+        </option>
+      ))
+    }
+  </select>
+  <svg
+    class="pointer-events-none absolute right-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-worn-stone"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path d="m7 10 5 5 5-5H7Z" fill="currentColor"></path>
+  </svg>
+</div>
+
+<script lang="ts" is:inline>
+  const selects = document.querySelectorAll('[data-language-select]');
+
+  selects.forEach((select) => {
+    select.addEventListener('change', () => {
+      const selectedPath = select.value;
+
+      if (selectedPath.length > 0) {
+        window.location.href = selectedPath;
+      }
+    });
+  });
+</script>

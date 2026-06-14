@@ -1,0 +1,65 @@
+---
+import BaseLayout from '@components/layout/BaseLayout.astro';
+import Footer from '@components/layout/Footer.astro';
+import Header from '@components/layout/Header.astro';
+import AboutSection from '@components/sections/AboutSection.astro';
+import ContactSection from '@components/sections/ContactSection.astro';
+import ExperiencesSection from '@components/sections/ExperiencesSection.astro';
+import GallerySection from '@components/sections/GallerySection.astro';
+import HeroSection from '@components/sections/HeroSection.astro';
+import RoomsSection from '@components/sections/RoomsSection.astro';
+import TestimonialsSection from '@components/sections/TestimonialsSection.astro';
+import rawExperiencesData from '@data/experiences.json';
+import rawGalleryData from '@data/gallery.json';
+import rawRoomsData from '@data/rooms.json';
+import rawSiteData from '@data/site.json';
+import { LOCALE_CONFIG, SUPPORTED_LOCALES, type SupportedLocale } from '@app-types/i18n';
+import type { ExperiencesData } from '@app-types/experience';
+import type { GalleryData } from '@app-types/gallery';
+import type { RoomsData } from '@app-types/room';
+import type { SiteConfig } from '@app-types/site';
+import { loadTranslations } from '@utils/i18n';
+
+interface Props {}
+
+interface StaticPath {
+  readonly params: {
+    readonly lang: SupportedLocale;
+  };
+}
+
+export function getStaticPaths(): StaticPath[] {
+  return SUPPORTED_LOCALES.map((lang: SupportedLocale) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: SupportedLocale };
+const translations = await loadTranslations(lang);
+const localeConfig = LOCALE_CONFIG[lang];
+const roomsData = rawRoomsData as unknown as RoomsData satisfies RoomsData;
+const experiencesData = rawExperiencesData as unknown as ExperiencesData satisfies ExperiencesData;
+const galleryData = rawGalleryData as unknown as GalleryData satisfies GalleryData;
+const site = rawSiteData as unknown as SiteConfig satisfies SiteConfig;
+const { rooms } = roomsData;
+const { experiences } = experiencesData;
+const { gallery } = galleryData;
+---
+
+<BaseLayout lang={lang} title={translations.meta.title} description={translations.meta.description}>
+  <a href="#main-content" class="skip-link">{translations.accessibility.skipToContent}</a>
+
+  <Header lang={lang} translations={translations} currentLocale={localeConfig} site={site} />
+
+  <main id="main-content">
+    <HeroSection translations={translations} />
+    <AboutSection translations={translations} />
+    <RoomsSection translations={translations} rooms={rooms} lang={lang} />
+    <GallerySection translations={translations} galleryItems={gallery} lang={lang} />
+    <ExperiencesSection translations={translations} experiences={experiences} lang={lang} />
+    <TestimonialsSection translations={translations} />
+    <ContactSection translations={translations} site={site} rooms={rooms} lang={lang} />
+  </main>
+
+  <Footer translations={translations} lang={lang} site={site} />
+</BaseLayout>

@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "title": "Gjirokastër Guest House - Séjournez dans la Cité de pierre d'Albanie",
+    "description": "Une maison d'hôtes ottomane restaurée à Gjirokastra, ville classée au patrimoine mondial de l'UNESCO. 4 chambres, petit-déjeuner dans la cour, vues sur le château. Réservez en direct."
+  },
+  "nav": {
+    "home": "Accueil",
+    "rooms": "Chambres",
+    "gallery": "Galerie",
+    "experiences": "Expériences",
+    "contact": "Contact",
+    "book": "Réserver"
+  },
+  "hero": {
+    "heading": "Séjournez parmi les pierres de Gjirokastër",
+    "subheading": "4 chambres · Maison ottomane · Petit-déjeuner inclus",
+    "imageAlt": "Cour en pierre d'une maison d'hôtes restaurée à Gjirokastra",
+    "ctaBook": "Réserver",
+    "ctaRooms": "Voir les chambres"
+  },
+  "about": {
+    "eyebrow": "La maison",
+    "heading": "Une histoire gravée dans la pierre",
+    "subheading": "Restaurée. Vivante. À vous pour quelques jours.",
+    "body": "Construite au début du XIXe siècle pendant la période ottomane, cette maison de ville a abrité marchands, lettrés et familles pendant deux siècles. Restaurée pendant quatre ans avec de la pierre locale et des boiseries d'origine, elle a rouvert comme maison d'hôtes en 2012.",
+    "facts": {
+      "built": "Construite",
+      "builtValue": "vers 1820",
+      "rooms": "Chambres",
+      "roomsValue": "4",
+      "altitude": "Altitude",
+      "altitudeValue": "300 m",
+      "breakfast": "Petit-déjeuner",
+      "breakfastValue": "Inclus"
+    }
+  },
+  "rooms": {
+    "eyebrow": "Hébergement",
+    "heading": "Nos chambres",
+    "subheading": "Quatre chambres, chacune avec son caractère.",
+    "perNight": "/ nuit",
+    "guests": "{{count}} personnes",
+    "size": "{{size}} m²",
+    "viewDetails": "Voir la chambre",
+    "bookNow": "Réserver cette chambre",
+    "amenityLabels": {
+      "wifi": "Wi-Fi gratuit",
+      "private-bathroom": "Salle de bain privée",
+      "air-conditioning": "Climatisation",
+      "breakfast": "Petit-déjeuner inclus",
+      "castle-view": "Vue château",
+      "courtyard-view": "Vue cour",
+      "city-view": "Vue ville",
+      "king-bed": "Lit king-size",
+      "twin-beds": "Lits jumeaux",
+      "balcony": "Balcon privé",
+      "smart-tv": "Smart TV",
+      "safe": "Coffre-fort",
+      "mini-fridge": "Mini-réfrigérateur"
+    }
+  },
+  "gallery": {
+    "eyebrow": "Galerie",
+    "heading": "La maison et la ville",
+    "subheading": "Murs de pierre, rues pavées, lumière du château."
+  },
+  "experiences": {
+    "eyebrow": "Autour de nous",
+    "heading": "Gjirokastra est la destination",
+    "subheading": "Tout est accessible à pied.",
+    "walkingMinutes": "{{count}} min à pied",
+    "drivingMinutes": "{{count}} min en voiture"
+  },
+  "testimonials": {
+    "eyebrow": "Hôtes",
+    "heading": "Ce qu'ils disent",
+    "items": [
+      {
+        "quote": "La maison semblait historique sans perdre en confort. Le petit-déjeuner dans la cour reste notre meilleur souvenir.",
+        "name": "Mara & Luis",
+        "location": "Espagne"
+      },
+      {
+        "quote": "Une base calme au-dessus du bazar, avec des hôtes adorables et une vue sur le château qui rendait chaque matin spécial.",
+        "name": "Elena",
+        "location": "Grèce"
+      },
+      {
+        "quote": "Magnifiquement restaurée, impeccable et proche de tout. Nous avons tout fait à pied et dormi merveilleusement bien.",
+        "name": "Thomas",
+        "location": "France"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Réserver en direct",
+    "heading": "Contactez-nous",
+    "subheading": "Nous répondons en quelques heures. Réservez en direct pour obtenir le meilleur tarif.",
+    "info": {
+      "addressLabel": "Adresse",
+      "phoneLabel": "Téléphone",
+      "emailLabel": "E-mail",
+      "checkinLabel": "Arrivée",
+      "checkoutLabel": "Départ",
+      "receptionLabel": "Horaires de réception"
+    },
+    "form": {
+      "name": "Votre nom",
+      "email": "Adresse e-mail",
+      "checkin": "Date d'arrivée",
+      "checkout": "Date de départ",
+      "guests": "Nombre de personnes",
+      "room": "Préférence de chambre",
+      "roomAny": "Aucune préférence",
+      "message": "Message (facultatif)",
+      "submit": "Envoyer la demande",
+      "whatsapp": "Discuter sur WhatsApp",
+      "success": "Message envoyé. Nous vous répondrons bientôt.",
+      "error": "Une erreur est survenue. Veuillez réessayer ou nous contacter directement."
+    }
+  },
+  "footer": {
+    "tagline": "Une maison de pierre dans la ville la plus légendaire d'Albanie.",
+    "linksLabel": "Liens rapides",
+    "rights": "Tous droits réservés."
+  },
+  "language": {
+    "select": "Langue",
+    "current": "Langue actuelle"
+  },
+  "accessibility": {
+    "skipToContent": "Aller au contenu principal",
+    "openMenu": "Ouvrir le menu de navigation",
+    "closeMenu": "Fermer le menu de navigation",
+    "roomImage": "Photo de {{name}}",
+    "galleryImage": "Photo de galerie {{index}}"
+  }
+}

@@ -1,0 +1,22 @@
+---
+interface Props {
+  eyebrow: string;
+  heading: string;
+  subheading?: string;
+  align?: 'left' | 'center';
+}
+
+const { eyebrow, heading, subheading, align = 'left' } = Astro.props;
+const alignClass = align === 'center' ? 'text-center' : 'text-left';
+const paragraphClass = align === 'center' ? 'mx-auto' : '';
+---
+
+<div class={`mb-10 ${alignClass}`}>
+  <p class="mb-3 text-sm font-semibold uppercase tracking-wide text-valley-green">{eyebrow}</p>
+  <h2 class="text-4xl italic leading-tight text-mountain-pine">{heading}</h2>
+  {
+    subheading ? (
+      <p class={`mt-3 max-w-2xl text-lg leading-8 text-worn-stone ${paragraphClass}`}>{subheading}</p>
+    ) : null
+  }
+</div>

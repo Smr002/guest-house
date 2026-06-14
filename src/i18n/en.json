@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "title": "Gjirokastër Guest House - Stay in Albania's City of Stone",
+    "description": "A restored Ottoman guest house in Gjirokastra, UNESCO World Heritage city. 4 rooms, courtyard breakfast, castle views. Book direct."
+  },
+  "nav": {
+    "home": "Home",
+    "rooms": "Rooms",
+    "gallery": "Gallery",
+    "experiences": "Experiences",
+    "contact": "Contact",
+    "book": "Book a stay"
+  },
+  "hero": {
+    "heading": "Stay among the stones of Gjirokastër",
+    "subheading": "4 rooms · Ottoman townhouse · Breakfast included",
+    "imageAlt": "Stone courtyard of a restored guest house in Gjirokastra",
+    "ctaBook": "Book a stay",
+    "ctaRooms": "View rooms"
+  },
+  "about": {
+    "eyebrow": "The house",
+    "heading": "A story carved in stone",
+    "subheading": "Restored. Alive. Yours for a few days.",
+    "body": "Built in the early 19th century during the Ottoman period, this townhouse has sheltered traders, scholars, and families across two centuries. Restored over four years with local stone and original wooden joinery, it reopened as a guest house in 2012.",
+    "facts": {
+      "built": "Built",
+      "builtValue": "circa 1820",
+      "rooms": "Rooms",
+      "roomsValue": "4",
+      "altitude": "Altitude",
+      "altitudeValue": "300 m",
+      "breakfast": "Breakfast",
+      "breakfastValue": "Included"
+    }
+  },
+  "rooms": {
+    "eyebrow": "Accommodation",
+    "heading": "Our rooms",
+    "subheading": "Four rooms, each with its own character.",
+    "perNight": "/ night",
+    "guests": "{{count}} guests",
+    "size": "{{size}} m²",
+    "viewDetails": "See room",
+    "bookNow": "Book this room",
+    "amenityLabels": {
+      "wifi": "Free Wi-Fi",
+      "private-bathroom": "Private bathroom",
+      "air-conditioning": "Air conditioning",
+      "breakfast": "Breakfast included",
+      "castle-view": "Castle view",
+      "courtyard-view": "Courtyard view",
+      "city-view": "City view",
+      "king-bed": "King-size bed",
+      "twin-beds": "Twin beds",
+      "balcony": "Private balcony",
+      "smart-tv": "Smart TV",
+      "safe": "In-room safe",
+      "mini-fridge": "Mini fridge"
+    }
+  },
+  "gallery": {
+    "eyebrow": "Gallery",
+    "heading": "The house & the city",
+    "subheading": "Stone walls, cobbled streets, castle light."
+  },
+  "experiences": {
+    "eyebrow": "Around us",
+    "heading": "Gjirokastra is the destination",
+    "subheading": "Everything is within walking distance.",
+    "walkingMinutes": "{{count}} min walk",
+    "drivingMinutes": "{{count}} min drive"
+  },
+  "testimonials": {
+    "eyebrow": "Guests",
+    "heading": "What they say",
+    "items": [
+      {
+        "quote": "The house felt historic without losing comfort. Breakfast in the courtyard was the moment we still talk about.",
+        "name": "Mara & Luis",
+        "location": "Spain"
+      },
+      {
+        "quote": "A calm base above the bazaar, with kind hosts and a castle view that made every morning feel special.",
+        "name": "Elena",
+        "location": "Greece"
+      },
+      {
+        "quote": "Beautifully restored, spotless, and close to everything. We walked everywhere and slept wonderfully.",
+        "name": "Thomas",
+        "location": "France"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Book direct",
+    "heading": "Get in touch",
+    "subheading": "We respond within a few hours. Book direct for the best rate.",
+    "info": {
+      "addressLabel": "Address",
+      "phoneLabel": "Phone",
+      "emailLabel": "Email",
+      "checkinLabel": "Check-in",
+      "checkoutLabel": "Check-out",
+      "receptionLabel": "Reception hours"
+    },
+    "form": {
+      "name": "Your name",
+      "email": "Email address",
+      "checkin": "Check-in date",
+      "checkout": "Check-out date",
+      "guests": "Number of guests",
+      "room": "Room preference",
+      "roomAny": "No preference",
+      "message": "Message (optional)",
+      "submit": "Send enquiry",
+      "whatsapp": "Chat on WhatsApp",
+      "success": "Message sent. We'll be in touch soon.",
+      "error": "Something went wrong. Please try again or contact us directly."
+    }
+  },
+  "footer": {
+    "tagline": "A stone house in Albania's most storied city.",
+    "linksLabel": "Quick links",
+    "rights": "All rights reserved."
+  },
+  "language": {
+    "select": "Language",
+    "current": "Current language"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "roomImage": "Photo of {{name}}",
+    "galleryImage": "Gallery photo {{index}}"
+  }
+}

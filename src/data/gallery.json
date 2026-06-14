@@ -1,0 +1,159 @@
+{
+  "gallery": [
+    {
+      "id": "courtyard",
+      "image": "courtyard",
+      "featured": true,
+      "translations": {
+        "en": {
+          "title": "Stone courtyard",
+          "alt": "Restored stone courtyard of the guest house in Gjirokastra"
+        },
+        "sq": {
+          "title": "Oborri prej guri",
+          "alt": "Oborri i restauruar prej guri i bujtinës në Gjirokastër"
+        },
+        "es": {
+          "title": "Patio de piedra",
+          "alt": "Patio restaurado de piedra de la casa de huéspedes en Gjirokastra"
+        },
+        "fr": {
+          "title": "Cour en pierre",
+          "alt": "Cour en pierre restaurée de la maison d'hôtes à Gjirokastra"
+        },
+        "it": {
+          "title": "Cortile in pietra",
+          "alt": "Cortile in pietra restaurato della guest house a Gjirokastra"
+        },
+        "el": {
+          "title": "Πέτρινη αυλή",
+          "alt": "Αποκατεστημένη πέτρινη αυλή του ξενώνα στο Αργυρόκαστρο"
+        }
+      }
+    },
+    {
+      "id": "room",
+      "image": "room",
+      "featured": false,
+      "translations": {
+        "en": {
+          "title": "Restored rooms",
+          "alt": "Guest room with stone walls, wooden beams, and white linen"
+        },
+        "sq": {
+          "title": "Dhoma të restauruara",
+          "alt": "Dhomë mysafirësh me mure guri, trarë druri dhe çarçafë të bardhë"
+        },
+        "es": {
+          "title": "Habitaciones restauradas",
+          "alt": "Habitación con paredes de piedra, vigas de madera y sábanas blancas"
+        },
+        "fr": {
+          "title": "Chambres restaurées",
+          "alt": "Chambre avec murs en pierre, poutres en bois et linge blanc"
+        },
+        "it": {
+          "title": "Camere restaurate",
+          "alt": "Camera con pareti in pietra, travi in legno e biancheria bianca"
+        },
+        "el": {
+          "title": "Αποκατεστημένα δωμάτια",
+          "alt": "Δωμάτιο με πέτρινους τοίχους, ξύλινα δοκάρια και λευκά λινά"
+        }
+      }
+    },
+    {
+      "id": "breakfast",
+      "image": "breakfast",
+      "featured": false,
+      "translations": {
+        "en": {
+          "title": "Courtyard breakfast",
+          "alt": "Breakfast table with local bread, honey, cheese, and coffee in the courtyard"
+        },
+        "sq": {
+          "title": "Mëngjes në oborr",
+          "alt": "Tryezë mëngjesi me bukë vendi, mjaltë, djathë dhe kafe në oborr"
+        },
+        "es": {
+          "title": "Desayuno en el patio",
+          "alt": "Mesa de desayuno con pan local, miel, queso y café en el patio"
+        },
+        "fr": {
+          "title": "Petit-déjeuner dans la cour",
+          "alt": "Table de petit-déjeuner avec pain local, miel, fromage et café dans la cour"
+        },
+        "it": {
+          "title": "Colazione in cortile",
+          "alt": "Tavola della colazione con pane locale, miele, formaggio e caffè nel cortile"
+        },
+        "el": {
+          "title": "Πρωινό στην αυλή",
+          "alt": "Τραπέζι πρωινού με τοπικό ψωμί, μέλι, τυρί και καφέ στην αυλή"
+        }
+      }
+    },
+    {
+      "id": "old-town",
+      "image": "old-town",
+      "featured": false,
+      "translations": {
+        "en": {
+          "title": "Old town lanes",
+          "alt": "Cobbled lane and stone houses in the old town of Gjirokastra"
+        },
+        "sq": {
+          "title": "Rrugicat e qytetit të vjetër",
+          "alt": "Rrugicë me kalldrëm dhe shtëpi guri në qytetin e vjetër të Gjirokastrës"
+        },
+        "es": {
+          "title": "Calles del casco antiguo",
+          "alt": "Calle empedrada y casas de piedra en el casco antiguo de Gjirokastra"
+        },
+        "fr": {
+          "title": "Ruelles de la vieille ville",
+          "alt": "Ruelle pavée et maisons en pierre dans la vieille ville de Gjirokastra"
+        },
+        "it": {
+          "title": "Vicoli del centro storico",
+          "alt": "Vicolo lastricato e case in pietra nel centro storico di Gjirokastra"
+        },
+        "el": {
+          "title": "Σοκάκια της παλιάς πόλης",
+          "alt": "Λιθόστρωτο σοκάκι και πέτρινα σπίτια στην παλιά πόλη του Αργυροκάστρου"
+        }
+      }
+    },
+    {
+      "id": "castle",
+      "image": "castle",
+      "featured": true,
+      "translations": {
+        "en": {
+          "title": "Castle light",
+          "alt": "Gjirokastra Castle above slate rooftops at sunset"
+        },
+        "sq": {
+          "title": "Drita mbi kala",
+          "alt": "Kalaja e Gjirokastrës mbi çatitë me gur në perëndim"
+        },
+        "es": {
+          "title": "Luz del castillo",
+          "alt": "Castillo de Gjirokastra sobre tejados de pizarra al atardecer"
+        },
+        "fr": {
+          "title": "Lumière du château",
+          "alt": "Château de Gjirokastra au-dessus des toits de pierre au coucher du soleil"
+        },
+        "it": {
+          "title": "Luce sul castello",
+          "alt": "Castello di Gjirokastra sopra i tetti in pietra al tramonto"
+        },
+        "el": {
+          "title": "Φως στο κάστρο",
+          "alt": "Το Κάστρο του Αργυροκάστρου πάνω από πέτρινες στέγες στο ηλιοβασίλεμα"
+        }
+      }
+    }
+  ]
+}

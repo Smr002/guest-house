@@ -1,0 +1,216 @@
+---
+import type { SupportedLocale } from '@app-types/i18n';
+import type { Room } from '@app-types/room';
+import type { SiteConfig } from '@app-types/site';
+import type { Translations } from '@app-types/translations';
+import Button from '@components/ui/Button.astro';
+import SectionHeader from '@components/ui/SectionHeader.astro';
+import { getRoomContent } from '@utils/i18n';
+
+interface Props {
+  translations: Translations;
+  site: SiteConfig;
+  rooms: readonly Room[];
+  lang: SupportedLocale;
+}
+
+const { translations, site, rooms, lang } = Astro.props;
+const phoneHref = `tel:${site.contact.phone.replaceAll(' ', '')}`;
+const whatsappHref = `https://wa.me/${site.contact.whatsapp.replaceAll('+', '')}`;
+interface ContactRow {
+  readonly label: string;
+  readonly value: string;
+  readonly href: string | undefined;
+}
+
+const contactRows = [
+  { label: translations.contact.info.addressLabel, value: `${site.location.address}, ${site.location.city}`, href: site.location.googleMapsUrl },
+  { label: translations.contact.info.phoneLabel, value: site.contact.phone, href: phoneHref },
+  { label: translations.contact.info.emailLabel, value: site.contact.email, href: `mailto:${site.contact.email}` },
+  { label: translations.contact.info.checkinLabel, value: site.hours.checkIn, href: undefined },
+  { label: translations.contact.info.checkoutLabel, value: site.hours.checkOut, href: undefined },
+  { label: translations.contact.info.receptionLabel, value: site.hours.reception, href: undefined },
+] as const satisfies readonly ContactRow[];
+---
+
+<section id="contact" class="bg-light-stone py-section">
+  <div class="container">
+    <SectionHeader
+      eyebrow={translations.contact.eyebrow}
+      heading={translations.contact.heading}
+      subheading={translations.contact.subheading}
+    />
+
+    <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+      <div class="rounded-lg border border-stone-white bg-stone-white p-6 shadow-soft">
+        <dl class="grid gap-5">
+          {
+            contactRows.map((row) => (
+              <div>
+                <dt class="text-xs font-semibold uppercase tracking-wide text-worn-stone">{row.label}</dt>
+                <dd class="mt-1 text-base font-medium text-mountain-pine">
+                  {row.href ? (
+                    <a class="transition hover:text-valley-green" href={row.href}>
+                      {row.value}
+                    </a>
+                  ) : (
+                    row.value
+                  )}
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+
+        <a
+          class="mt-8 inline-flex min-h-11 w-full items-center justify-center rounded border border-valley-green px-5 py-3 text-sm font-semibold text-valley-green transition hover:bg-valley-green hover:text-stone-white"
+          href={whatsappHref}
+        >
+          {translations.contact.form.whatsapp}
+        </a>
+      </div>
+
+      <form
+        id="enquiry-form"
+        class="grid gap-4 rounded-lg border border-stone-white bg-stone-white p-6 shadow-soft"
+        action="/api/contact"
+        method="post"
+        novalidate
+        data-success-message={translations.contact.form.success}
+        data-error-message={translations.contact.form.error}
+      >
+        <div class="grid gap-4 md:grid-cols-2">
+          <label class="grid gap-2 text-sm font-medium text-mountain-pine">
+            <span>{translations.contact.form.name}</span>
+            <input
+              class="min-h-11 rounded border border-light-stone px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-old-brass"
+              type="text"
+              name="name"
+              autocomplete="name"
+              required
+            />
+          </label>
+          <label class="grid gap-2 text-sm font-medium text-mountain-pine">
+            <span>{translations.contact.form.email}</span>
+            <input
+              class="min-h-11 rounded border border-light-stone px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-old-brass"
+              type="email"
+              name="email"
+              autocomplete="email"
+              required
+            />
+          </label>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-2">
+          <label class="grid gap-2 text-sm font-medium text-mountain-pine">
+            <span>{translations.contact.form.checkin}</span>
+            <input
+              class="min-h-11 rounded border border-light-stone px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-old-brass"
+              type="date"
+              name="checkin"
+              required
+            />
+          </label>
+          <label class="grid gap-2 text-sm font-medium text-mountain-pine">
+            <span>{translations.contact.form.checkout}</span>
+            <input
+              class="min-h-11 rounded border border-light-stone px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-old-brass"
+              type="date"
+              name="checkout"
+              required
+            />
+          </label>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-2">
+          <label class="grid gap-2 text-sm font-medium text-mountain-pine">
+            <span>{translations.contact.form.guests}</span>
+            <input
+              class="min-h-11 rounded border border-light-stone px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-old-brass"
+              type="number"
+              name="guests"
+              min="1"
+              max="6"
+              inputmode="numeric"
+            />
+          </label>
+          <label class="grid gap-2 text-sm font-medium text-mountain-pine">
+            <span>{translations.contact.form.room}</span>
+            <select
+              class="min-h-11 rounded border border-light-stone px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-old-brass"
+              name="room"
+            >
+              <option value="">{translations.contact.form.roomAny}</option>
+              {
+                rooms.map((room: Room) => {
+                  const content = getRoomContent(room, lang);
+                  return <option value={room.slug}>{content.name}</option>;
+                })
+              }
+            </select>
+          </label>
+        </div>
+
+        <label class="grid gap-2 text-sm font-medium text-mountain-pine">
+          <span>{translations.contact.form.message}</span>
+          <textarea
+            class="min-h-32 rounded border border-light-stone px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-old-brass"
+            name="message"
+            rows="4"
+          ></textarea>
+        </label>
+
+        <Button type="submit" variant="primary" class="w-full">{translations.contact.form.submit}</Button>
+        <p id="form-status" class="hidden text-center text-sm font-medium" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script lang="ts" is:inline>
+  const form = /** @type {HTMLFormElement | null} */ (document.querySelector('#enquiry-form'));
+  const statusElement = /** @type {HTMLParagraphElement | null} */ (document.querySelector('#form-status'));
+
+  function formDataToPayload(formData) {
+    const payload = {};
+    formData.forEach((value, key) => {
+      payload[key] = String(value);
+    });
+    return payload;
+  }
+
+  function showStatus(message, isSuccess) {
+    if (statusElement === null) {
+      return;
+    }
+
+    statusElement.textContent = message;
+    statusElement.classList.remove('hidden', 'text-red-700', 'text-valley-green');
+    statusElement.classList.add(isSuccess ? 'text-valley-green' : 'text-red-700');
+  }
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const endpoint = form.action;
+    const payload = formDataToPayload(new FormData(form));
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error('Request failed');
+      }
+
+      showStatus(form.dataset['successMessage'] ?? '', true);
+      form.reset();
+    } catch {
+      showStatus(form.dataset['errorMessage'] ?? '', false);
+    }
+  });
+</script>

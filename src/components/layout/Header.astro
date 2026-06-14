@@ -1,0 +1,111 @@
+---
+import type { LocaleConfig, SupportedLocale } from '@app-types/i18n';
+import type { SiteConfig } from '@app-types/site';
+import type { Translations } from '@app-types/translations';
+import LanguageSwitcher from '@components/ui/LanguageSwitcher.astro';
+
+interface Props {
+  lang: SupportedLocale;
+  translations: Translations;
+  currentLocale: LocaleConfig;
+  site: SiteConfig;
+}
+
+const { lang, translations, currentLocale, site } = Astro.props;
+const navItems = [
+  { href: '#home', label: translations.nav.home },
+  { href: '#rooms', label: translations.nav.rooms },
+  { href: '#gallery', label: translations.nav.gallery },
+  { href: '#experiences', label: translations.nav.experiences },
+  { href: '#contact', label: translations.nav.contact },
+] as const satisfies readonly { readonly href: string; readonly label: string }[];
+const currentLanguageLabel = `${translations.language.current}: ${currentLocale.label}`;
+---
+
+<header class="sticky top-0 z-50 border-b border-light-stone bg-stone-white/95 backdrop-blur-sm">
+  <div class="container flex min-h-16 items-center justify-between gap-4">
+    <a href="#home" class="flex min-w-0 items-baseline gap-2 text-mountain-pine">
+      <span class="font-display text-2xl italic leading-none">{site.name}</span>
+    </a>
+
+    <nav class="hidden items-center gap-7 lg:flex" aria-label={translations.footer.linksLabel}>
+      {
+        navItems.map((item) => (
+          <a class="text-sm font-medium text-mountain-pine transition-colors hover:text-valley-green" href={item.href}>
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="hidden items-center gap-3 lg:flex">
+      <div aria-label={currentLanguageLabel}>
+        <LanguageSwitcher currentLang={lang} translations={translations} selectId="lang-select-desktop" />
+      </div>
+      <a
+        class="inline-flex min-h-10 items-center justify-center rounded bg-old-brass px-5 py-2 text-sm font-semibold text-mountain-pine transition hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-old-brass focus-visible:ring-offset-2"
+        href="#contact"
+      >
+        {translations.nav.book}
+      </a>
+    </div>
+
+    <button
+      id="menu-toggle"
+      class="inline-flex h-11 w-11 items-center justify-center rounded border border-light-stone text-mountain-pine transition hover:border-valley-green lg:hidden"
+      type="button"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label={translations.accessibility.openMenu}
+      data-open-label={translations.accessibility.openMenu}
+      data-close-label={translations.accessibility.closeMenu}
+    >
+      <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 7h16v2H4V7Zm0 4h16v2H4v-2Zm0 4h16v2H4v-2Z" fill="currentColor"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden border-t border-light-stone bg-stone-white lg:hidden">
+    <div class="container grid gap-4 py-5">
+      <nav class="grid gap-1" aria-label={translations.footer.linksLabel}>
+        {
+          navItems.map((item) => (
+            <a class="rounded px-2 py-3 text-base font-medium text-mountain-pine hover:bg-light-stone" href={item.href}>
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+      <div class="flex flex-wrap items-center gap-3">
+        <LanguageSwitcher currentLang={lang} translations={translations} selectId="lang-select-mobile" />
+        <a class="rounded bg-old-brass px-5 py-3 text-sm font-semibold text-mountain-pine" href="#contact">
+          {translations.nav.book}
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script lang="ts" is:inline>
+  const menuButton = /** @type {HTMLButtonElement | null} */ (document.querySelector('#menu-toggle'));
+  const mobileMenu = /** @type {HTMLElement | null} */ (document.querySelector('#mobile-menu'));
+
+  function setMenuState(isOpen) {
+    mobileMenu?.classList.toggle('hidden', !isOpen);
+    menuButton?.setAttribute('aria-expanded', String(isOpen));
+    const openLabel = menuButton?.dataset['openLabel'] ?? '';
+    const closeLabel = menuButton?.dataset['closeLabel'] ?? '';
+    menuButton?.setAttribute('aria-label', isOpen ? closeLabel : openLabel);
+  }
+
+  function toggleMenu() {
+    const isOpen = menuButton?.getAttribute('aria-expanded') === 'true';
+    setMenuState(!isOpen);
+  }
+
+  menuButton?.addEventListener('click', toggleMenu);
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setMenuState(false));
+  });
+</script>

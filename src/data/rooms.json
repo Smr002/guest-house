@@ -1,0 +1,233 @@
+{
+  "rooms": [
+    {
+      "id": "castle-view",
+      "slug": "castle-view",
+      "capacity": 2,
+      "pricePerNight": 65,
+      "currency": "EUR",
+      "sizeM2": 22,
+      "featured": true,
+      "images": {
+        "main": "rooms/castle-view-main.jpg",
+        "gallery": [
+          "rooms/castle-view-1.jpg",
+          "rooms/castle-view-2.jpg",
+          "rooms/castle-view-3.jpg"
+        ]
+      },
+      "amenities": [
+        "wifi",
+        "private-bathroom",
+        "air-conditioning",
+        "breakfast",
+        "castle-view",
+        "king-bed"
+      ],
+      "translations": {
+        "en": {
+          "name": "Castle View Room",
+          "shortDescription": "A bright double room with a direct view of Gjirokastra Castle.",
+          "description": "Wake up to the silhouette of a thousand-year-old fortress framed in your window. This 22 m² room features a king-size bed dressed in white linen, exposed stone walls, and a private bathroom with a rain shower. Breakfast is served in the courtyard below."
+        },
+        "sq": {
+          "name": "Dhoma me Pamje nga Kalaja",
+          "shortDescription": "Një dhomë dyshe plot dritë me pamje të drejtpërdrejtë nga Kalaja e Gjirokastrës.",
+          "description": "Zgjohuni me siluetën e një kalaje mijëravjeçare të kornizuar në dritare. Kjo dhomë 22 m² ka krevat king-size me çarçafë të bardhë, mure guri të ekspozuar dhe banjë private me dush shiu. Mëngjesi shërbehet në oborrin poshtë."
+        },
+        "es": {
+          "name": "Habitación Vista al Castillo",
+          "shortDescription": "Una luminosa habitación doble con vista directa al Castillo de Gjirokastra.",
+          "description": "Despierta con la silueta de una fortaleza milenaria enmarcada en tu ventana. Esta habitación de 22 m² cuenta con cama king-size vestida con sábanas blancas, paredes de piedra vista y baño privado con ducha de lluvia. El desayuno se sirve en el patio."
+        },
+        "fr": {
+          "name": "Chambre Vue Château",
+          "shortDescription": "Une chambre double lumineuse avec vue directe sur le château de Gjirokastra.",
+          "description": "Réveillez-vous avec la silhouette d'une forteresse millénaire encadrée par votre fenêtre. Cette chambre de 22 m² dispose d'un lit king-size en linge blanc, de murs en pierre apparente et d'une salle de bain privée avec douche à effet pluie. Le petit-déjeuner est servi dans la cour."
+        },
+        "it": {
+          "name": "Camera Vista Castello",
+          "shortDescription": "Una luminosa camera doppia con vista diretta sul Castello di Gjirokastra.",
+          "description": "Svegliatevi con la sagoma di una fortezza millenaria incorniciata dalla finestra. Questa camera di 22 m² dispone di letto king-size con biancheria bianca, pareti in pietra a vista e bagno privato con doccia a pioggia. La colazione viene servita nel cortile."
+        },
+        "el": {
+          "name": "Δωμάτιο με Θέα στο Κάστρο",
+          "shortDescription": "Ένα φωτεινό δίκλινο δωμάτιο με άμεση θέα στο Κάστρο του Αργυροκάστρου.",
+          "description": "Ξυπνήστε με τη σιλουέτα ενός χιλιόχρονου φρουρίου πλαισιωμένη στο παράθυρό σας. Αυτό το δωμάτιο 22 τ.μ. διαθέτει king-size κρεβάτι με λευκά λινά, πέτρινους τοίχους και ιδιωτικό μπάνιο με ντους βροχής. Το πρωινό σερβίρεται στην αυλή."
+        }
+      }
+    },
+    {
+      "id": "courtyard-suite",
+      "slug": "courtyard-suite",
+      "capacity": 2,
+      "pricePerNight": 85,
+      "currency": "EUR",
+      "sizeM2": 32,
+      "featured": false,
+      "images": {
+        "main": "rooms/courtyard-suite-main.jpg",
+        "gallery": [
+          "rooms/courtyard-suite-1.jpg",
+          "rooms/courtyard-suite-2.jpg"
+        ]
+      },
+      "amenities": [
+        "wifi",
+        "private-bathroom",
+        "air-conditioning",
+        "breakfast",
+        "courtyard-view",
+        "balcony",
+        "king-bed",
+        "mini-fridge"
+      ],
+      "translations": {
+        "en": {
+          "name": "Courtyard Suite",
+          "shortDescription": "Our most spacious room, with a private balcony overlooking the garden courtyard.",
+          "description": "The largest room in the house at 32 m², designed for guests who want to slow down. A private balcony opens directly onto the shaded courtyard where breakfast is laid each morning. Original wooden ceilings and hand-plastered walls make the space feel unmistakably Albanian."
+        },
+        "sq": {
+          "name": "Suitë me Oborr",
+          "shortDescription": "Dhoma jonë më e gjerë, me ballkon privat mbi oborrin me kopsht.",
+          "description": "Dhoma më e madhe e shtëpisë, 32 m², e krijuar për mysafirë që duan të ngadalësojnë ritmin. Ballkoni privat hapet drejt oborrit me hije ku shtrohet mëngjesi çdo ditë. Tavanet origjinale prej druri dhe muret e suvatuara me dorë i japin hapësirës një karakter qartësisht shqiptar."
+        },
+        "es": {
+          "name": "Suite del Patio",
+          "shortDescription": "Nuestra habitación más amplia, con balcón privado hacia el jardín interior.",
+          "description": "La habitación más grande de la casa, con 32 m², pensada para huéspedes que quieren bajar el ritmo. Un balcón privado se abre directamente al patio sombreado donde se sirve el desayuno cada mañana. Los techos de madera originales y las paredes enlucidas a mano crean una atmósfera inconfundiblemente albanesa."
+        },
+        "fr": {
+          "name": "Suite Cour Intérieure",
+          "shortDescription": "Notre chambre la plus spacieuse, avec balcon privé sur la cour-jardin.",
+          "description": "La plus grande chambre de la maison, 32 m², conçue pour les voyageurs qui souhaitent ralentir. Le balcon privé donne directement sur la cour ombragée où le petit-déjeuner est dressé chaque matin. Les plafonds en bois d'origine et les murs enduits à la main donnent au lieu une âme profondément albanaise."
+        },
+        "it": {
+          "name": "Suite con Cortile",
+          "shortDescription": "La nostra camera più spaziosa, con balcone privato sul giardino interno.",
+          "description": "La camera più grande della casa, 32 m², pensata per chi desidera rallentare. Il balcone privato si apre direttamente sul cortile ombreggiato dove ogni mattina viene servita la colazione. I soffitti originali in legno e le pareti intonacate a mano rendono lo spazio autenticamente albanese."
+        },
+        "el": {
+          "name": "Σουίτα Αυλής",
+          "shortDescription": "Το πιο ευρύχωρο δωμάτιό μας, με ιδιωτικό μπαλκόνι προς την αυλή.",
+          "description": "Το μεγαλύτερο δωμάτιο του σπιτιού, 32 τ.μ., σχεδιασμένο για επισκέπτες που θέλουν να χαλαρώσουν. Το ιδιωτικό μπαλκόνι ανοίγει απευθείας στη σκιερή αυλή όπου σερβίρεται κάθε πρωί το πρωινό. Τα αυθεντικά ξύλινα ταβάνια και οι χειροποίητοι σοβάδες χαρίζουν στον χώρο έντονα αλβανικό χαρακτήρα."
+        }
+      }
+    },
+    {
+      "id": "old-town-double",
+      "slug": "old-town-double",
+      "capacity": 2,
+      "pricePerNight": 55,
+      "currency": "EUR",
+      "sizeM2": 18,
+      "featured": false,
+      "images": {
+        "main": "rooms/old-town-double-main.jpg",
+        "gallery": [
+          "rooms/old-town-double-1.jpg",
+          "rooms/old-town-double-2.jpg"
+        ]
+      },
+      "amenities": [
+        "wifi",
+        "private-bathroom",
+        "air-conditioning",
+        "breakfast",
+        "city-view",
+        "twin-beds"
+      ],
+      "translations": {
+        "en": {
+          "name": "Old Town Double",
+          "shortDescription": "A cosy room with twin beds and rooftop views of the old town.",
+          "description": "Compact and perfectly formed at 18 m², ideal for travellers who spend their days exploring. Twin beds can be arranged as a king on request. The window frames a view of terracotta rooftops cascading toward the valley, one of the best views in the house."
+        },
+        "sq": {
+          "name": "Dhomë Dyshe e Qytetit të Vjetër",
+          "shortDescription": "Një dhomë e rehatshme me krevate teke dhe pamje mbi çatitë e qytetit të vjetër.",
+          "description": "E vogël dhe e organizuar me kujdes në 18 m², ideale për udhëtarë që ditën e kalojnë duke eksploruar. Krevatet teke mund të bashkohen si king me kërkesë. Dritarja hap një pamje mbi çatitë me tjegulla që zbresin drejt luginës, një nga këndet më të bukura të shtëpisë."
+        },
+        "es": {
+          "name": "Doble Casco Antiguo",
+          "shortDescription": "Una habitación acogedora con camas individuales y vistas a los tejados del casco antiguo.",
+          "description": "Compacta y muy bien resuelta, con 18 m², ideal para viajeros que pasan el día explorando. Las camas individuales pueden unirse como cama king bajo petición. La ventana enmarca los tejados de terracota que descienden hacia el valle, una de las mejores vistas de la casa."
+        },
+        "fr": {
+          "name": "Double Vieille Ville",
+          "shortDescription": "Une chambre cosy avec lits jumeaux et vue sur les toits de la vieille ville.",
+          "description": "Compacte et parfaitement agencée avec ses 18 m², idéale pour les voyageurs qui passent leurs journées dehors. Les lits jumeaux peuvent être rapprochés sur demande. La fenêtre encadre les toits en terre cuite qui descendent vers la vallée, l'une des plus belles vues de la maison."
+        },
+        "it": {
+          "name": "Doppia Città Vecchia",
+          "shortDescription": "Una camera accogliente con letti singoli e vista sui tetti del centro storico.",
+          "description": "Compatta e ben proporzionata, 18 m², ideale per chi trascorre la giornata esplorando. I letti singoli possono essere uniti su richiesta. La finestra incornicia i tetti in terracotta che scendono verso la valle, una delle viste più belle della casa."
+        },
+        "el": {
+          "name": "Δίκλινο Παλιάς Πόλης",
+          "shortDescription": "Ένα άνετο δωμάτιο με δύο μονά κρεβάτια και θέα στις στέγες της παλιάς πόλης.",
+          "description": "Συμπαγές και καλοσχεδιασμένο στα 18 τ.μ., ιδανικό για ταξιδιώτες που περνούν τη μέρα εξερευνώντας. Τα μονά κρεβάτια μπορούν να ενωθούν κατόπιν αιτήματος. Το παράθυρο πλαισιώνει τις κεραμιδένιες στέγες που κατεβαίνουν προς την κοιλάδα, μία από τις ωραιότερες θέες του σπιτιού."
+        }
+      }
+    },
+    {
+      "id": "family-room",
+      "slug": "family-room",
+      "capacity": 4,
+      "pricePerNight": 95,
+      "currency": "EUR",
+      "sizeM2": 38,
+      "featured": false,
+      "images": {
+        "main": "rooms/family-room-main.jpg",
+        "gallery": [
+          "rooms/family-room-1.jpg",
+          "rooms/family-room-2.jpg"
+        ]
+      },
+      "amenities": [
+        "wifi",
+        "private-bathroom",
+        "air-conditioning",
+        "breakfast",
+        "castle-view",
+        "king-bed",
+        "smart-tv",
+        "safe"
+      ],
+      "translations": {
+        "en": {
+          "name": "Family Room",
+          "shortDescription": "A generous 38 m² room sleeping up to four, with castle views from every window.",
+          "description": "The largest accommodation in the house, built for families or groups who want to share without compromise. One king-size bed and a comfortable twin sleeping area sit within 38 m² of restored Ottoman architecture. Castle views from both main windows. Breakfast for all guests included."
+        },
+        "sq": {
+          "name": "Dhomë Familjare",
+          "shortDescription": "Një dhomë 38 m² për deri në katër persona, me pamje nga kalaja.",
+          "description": "Akomodimi më i madh në shtëpi, i menduar për familje ose grupe që duan të rrinë bashkë pa bërë kompromis. Një krevat king-size dhe një zonë e rehatshme me dy krevate ndodhen brenda 38 m² arkitekture osmane të restauruar. Pamje nga kalaja nga të dyja dritaret kryesore. Mëngjesi përfshihet për të gjithë."
+        },
+        "es": {
+          "name": "Habitación Familiar",
+          "shortDescription": "Una amplia habitación de 38 m² para hasta cuatro personas, con vistas al castillo.",
+          "description": "El alojamiento más grande de la casa, creado para familias o grupos que quieren compartir sin renunciar a la comodidad. Una cama king-size y una zona de dos camas se integran en 38 m² de arquitectura otomana restaurada. Vistas al castillo desde las dos ventanas principales. Desayuno incluido para todos."
+        },
+        "fr": {
+          "name": "Chambre Familiale",
+          "shortDescription": "Une grande chambre de 38 m² pour quatre personnes, avec vue sur le château.",
+          "description": "Le logement le plus spacieux de la maison, pensé pour les familles ou les groupes qui souhaitent partager sans compromis. Un lit king-size et un espace avec deux lits confortables prennent place dans 38 m² d'architecture ottomane restaurée. Vue sur le château depuis les deux fenêtres principales. Petit-déjeuner inclus pour tous."
+        },
+        "it": {
+          "name": "Camera Familiare",
+          "shortDescription": "Una spaziosa camera di 38 m² per quattro persone, con vista sul castello.",
+          "description": "La sistemazione più grande della casa, pensata per famiglie o gruppi che vogliono condividere senza compromessi. Un letto king-size e una comoda zona con due letti sono inseriti in 38 m² di architettura ottomana restaurata. Vista sul castello da entrambe le finestre principali. Colazione inclusa per tutti."
+        },
+        "el": {
+          "name": "Οικογενειακό Δωμάτιο",
+          "shortDescription": "Ένα ευρύχωρο δωμάτιο 38 τ.μ. για έως τέσσερα άτομα, με θέα στο κάστρο.",
+          "description": "Το μεγαλύτερο κατάλυμα του σπιτιού, φτιαγμένο για οικογένειες ή παρέες που θέλουν να μοιραστούν τον χώρο χωρίς συμβιβασμούς. Ένα king-size κρεβάτι και ένας άνετος χώρος με δύο μονά βρίσκονται μέσα σε 38 τ.μ. αποκατεστημένης οθωμανικής αρχιτεκτονικής. Θέα στο κάστρο από τα δύο βασικά παράθυρα. Το πρωινό περιλαμβάνεται για όλους."
+        }
+      }
+    }
+  ]
+}

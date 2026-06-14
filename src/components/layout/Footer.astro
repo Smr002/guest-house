@@ -1,0 +1,57 @@
+---
+import type { SupportedLocale } from '@app-types/i18n';
+import type { SiteConfig } from '@app-types/site';
+import type { Translations } from '@app-types/translations';
+
+interface Props {
+  translations: Translations;
+  lang: SupportedLocale;
+  site: SiteConfig;
+}
+
+const { translations, lang, site } = Astro.props;
+const navItems = [
+  { href: `/${lang}/#rooms`, label: translations.nav.rooms },
+  { href: `/${lang}/#gallery`, label: translations.nav.gallery },
+  { href: `/${lang}/#experiences`, label: translations.nav.experiences },
+  { href: `/${lang}/#contact`, label: translations.nav.contact },
+] as const satisfies readonly { readonly href: string; readonly label: string }[];
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-mountain-pine py-12 text-stone-white">
+  <div class="container grid gap-10 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
+    <div>
+      <p class="font-display text-3xl italic">{site.name}</p>
+      <p class="mt-3 max-w-sm text-sm leading-6 text-stone-white/70">{translations.footer.tagline}</p>
+    </div>
+
+    <nav aria-label={translations.footer.linksLabel}>
+      <p class="mb-3 text-sm font-semibold uppercase tracking-wide text-old-brass">{translations.footer.linksLabel}</p>
+      <ul class="grid gap-2">
+        {
+          navItems.map((item) => (
+            <li>
+              <a class="text-sm text-stone-white/75 transition hover:text-stone-white" href={item.href}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div>
+      <p class="mb-3 text-sm font-semibold uppercase tracking-wide text-old-brass">{translations.nav.contact}</p>
+      <address class="not-italic text-sm leading-7 text-stone-white/75">
+        <a class="block transition hover:text-stone-white" href={site.location.googleMapsUrl}>{site.location.address}</a>
+        <a class="block transition hover:text-stone-white" href={`tel:${site.contact.phone.replaceAll(' ', '')}`}>{site.contact.phone}</a>
+        <a class="block transition hover:text-stone-white" href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+      </address>
+    </div>
+  </div>
+
+  <div class="container mt-10 border-t border-stone-white/10 pt-6">
+    <p class="text-sm text-stone-white/60">© {currentYear} {site.name}. {translations.footer.rights}</p>
+  </div>
+</footer>

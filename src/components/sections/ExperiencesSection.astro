@@ -1,0 +1,34 @@
+---
+import type { Experience } from '@app-types/experience';
+import type { SupportedLocale } from '@app-types/i18n';
+import type { Translations } from '@app-types/translations';
+import ExperienceCard from '@components/ui/ExperienceCard.astro';
+import SectionHeader from '@components/ui/SectionHeader.astro';
+
+interface Props {
+  translations: Translations;
+  experiences: readonly Experience[];
+  lang: SupportedLocale;
+}
+
+const { translations, experiences, lang } = Astro.props;
+---
+
+<section id="experiences" class="bg-light-stone py-section">
+  <div class="container">
+    <SectionHeader
+      eyebrow={translations.experiences.eyebrow}
+      heading={translations.experiences.heading}
+      subheading={translations.experiences.subheading}
+      align="center"
+    />
+
+    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      {
+        experiences.map((experience: Experience) => (
+          <ExperienceCard experience={experience} lang={lang} translations={translations} />
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets';
+import type { GalleryItem } from '@app-types/gallery';
+import type { SupportedLocale } from '@app-types/i18n';
+import type { Translations } from '@app-types/translations';
+import SectionHeader from '@components/ui/SectionHeader.astro';
+import { getRoomContent, t } from '@utils/i18n';
+import { getGalleryImage } from '@utils/images';
+
+interface Props {
+  translations: Translations;
+  galleryItems: readonly GalleryItem[];
+  lang: SupportedLocale;
+}
+
+const { translations, galleryItems, lang } = Astro.props;
+---
+
+<section id="gallery" class="bg-stone-white py-section">
+  <div class="container">
+    <SectionHeader
+      eyebrow={translations.gallery.eyebrow}
+      heading={translations.gallery.heading}
+      subheading={translations.gallery.subheading}
+    />
+
+    <div class="grid auto-rows-[260px] gap-4 md:grid-cols-4">
+      {
+        galleryItems.map((item: GalleryItem, index: number) => {
+          const content = getRoomContent(item, lang);
+          const image = getGalleryImage(item.image);
+          const featuredClass = item.featured ? 'md:col-span-2 md:row-span-2' : '';
+          const imageLabel = t(translations, 'accessibility.galleryImage', { index: index + 1 });
+
+          return (
+            <figure class={`group relative overflow-hidden rounded-lg bg-light-stone ${featuredClass}`}>
+              <Image
+                src={image}
+                alt={`${imageLabel}: ${content.alt}`}
+                widths={[420, 720, 960, 1280]}
+                sizes="(min-width: 768px) 25vw, 100vw"
+                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <figcaption class="absolute inset-x-0 bottom-0 bg-mountain-pine/80 px-4 py-3 text-sm font-medium text-stone-white backdrop-blur-sm">
+                {content.title}
+              </figcaption>
+            </figure>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

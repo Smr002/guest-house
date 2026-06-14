@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import type { Translations } from '@app-types/translations';
+import Button from '@components/ui/Button.astro';
+import { getHeroImage } from '@utils/images';
+
+interface Props {
+  translations: Translations;
+}
+
+const { translations } = Astro.props;
+const heroImage = getHeroImage();
+---
+
+<section id="home" class="relative">
+  <div class="h-[min(60vh,640px)] min-h-[360px] w-full overflow-hidden bg-worn-stone">
+    <Image
+      src={heroImage}
+      alt={translations.hero.imageAlt}
+      widths={[960, 1440, 1920]}
+      sizes="100vw"
+      class="h-full w-full object-cover"
+      loading="eager"
+    />
+  </div>
+
+  <div class="bg-mountain-pine py-section">
+    <div class="container">
+      <div class="max-w-4xl">
+        <h1 class="text-hero italic leading-tight text-stone-white">{translations.hero.heading}</h1>
+        <p class="mt-4 max-w-2xl text-lg leading-8 text-stone-white/70">{translations.hero.subheading}</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <Button variant="primary" href="#contact">{translations.hero.ctaBook}</Button>
+          <Button variant="ghost" href="#rooms">{translations.hero.ctaRooms}</Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+import type { SupportedLocale } from '@app-types/i18n';
+import type { Room } from '@app-types/room';
+import type { Translations } from '@app-types/translations';
+import RoomCard from '@components/ui/RoomCard.astro';
+import SectionHeader from '@components/ui/SectionHeader.astro';
+
+interface Props {
+  translations: Translations;
+  rooms: readonly Room[];
+  lang: SupportedLocale;
+}
+
+const { translations, rooms, lang } = Astro.props;
+const orderedRooms: Room[] = [...rooms].sort((firstRoom: Room, secondRoom: Room): number =>
+  Number(secondRoom.featured) - Number(firstRoom.featured),
+);
+---
+
+<section id="rooms" class="bg-light-stone py-section">
+  <div class="container">
+    <SectionHeader
+      eyebrow={translations.rooms.eyebrow}
+      heading={translations.rooms.heading}
+      subheading={translations.rooms.subheading}
+      align="center"
+    />
+
+    <div class="grid gap-6 lg:grid-cols-2">
+      {
+        orderedRooms.map((room: Room) => (
+          <RoomCard room={room} lang={lang} translations={translations} />
+        ))
+      }
+    </div>
+  </div>
+</section>

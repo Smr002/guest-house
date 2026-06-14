@@ -1,0 +1,40 @@
+---
+import type { Translations } from '@app-types/translations';
+import SectionHeader from '@components/ui/SectionHeader.astro';
+
+interface Props {
+  translations: Translations;
+}
+
+const { translations } = Astro.props;
+const facts = [
+  { label: translations.about.facts.built, value: translations.about.facts.builtValue },
+  { label: translations.about.facts.rooms, value: translations.about.facts.roomsValue },
+  { label: translations.about.facts.altitude, value: translations.about.facts.altitudeValue },
+  { label: translations.about.facts.breakfast, value: translations.about.facts.breakfastValue },
+] as const satisfies readonly { readonly label: string; readonly value: string }[];
+---
+
+<section class="bg-stone-white py-section">
+  <div class="container grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+    <SectionHeader
+      eyebrow={translations.about.eyebrow}
+      heading={translations.about.heading}
+      subheading={translations.about.subheading}
+    />
+
+    <div>
+      <p class="max-w-3xl text-lg leading-9 text-mountain-pine/80">{translations.about.body}</p>
+      <dl class="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-light-stone bg-light-stone sm:grid-cols-4">
+        {
+          facts.map((fact) => (
+            <div class="bg-white p-5">
+              <dt class="text-xs font-semibold uppercase tracking-wide text-worn-stone">{fact.label}</dt>
+              <dd class="mt-2 font-display text-2xl italic text-mountain-pine">{fact.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </div>
+</section>

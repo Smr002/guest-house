@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets';
+import type { SupportedLocale } from '@app-types/i18n';
+import type { AmenityKey, Room } from '@app-types/room';
+import type { Translations } from '@app-types/translations';
+import AmenityTag from '@components/ui/AmenityTag.astro';
+import Button from '@components/ui/Button.astro';
+import { formatPrice } from '@utils/formatting';
+import { getRoomContent, t } from '@utils/i18n';
+import { getRoomImage } from '@utils/images';
+
+interface Props {
+  room: Room;
+  lang: SupportedLocale;
+  translations: Translations;
+}
+
+const { room, lang, translations } = Astro.props;
+const content = getRoomContent(room, lang);
+const formattedPrice = formatPrice(room.pricePerNight, room.currency, lang);
+const displayAmenities: readonly AmenityKey[] = room.amenities.slice(0, 4);
+const roomImage = getRoomImage(room.id);
+const imageAlt = t(translations, 'accessibility.roomImage', { name: content.name });
+---
+
+<article class="group overflow-hidden rounded-lg border border-light-stone bg-white shadow-soft transition-transform duration-200 hover:-translate-y-1">
+  <div class="relative h-60 overflow-hidden bg-light-stone">
+    <Image
+      src={roomImage}
+      alt={imageAlt}
+      widths={[420, 720, 960]}
+      sizes="(min-width: 768px) 50vw, 100vw"
+      class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="p-6">
+    <div class="flex flex-wrap items-start justify-between gap-4">
+      <div>
+        <h3 class="text-3xl italic leading-tight text-mountain-pine">{content.name}</h3>
+        <p class="mt-2 text-sm leading-6 text-worn-stone">{content.shortDescription}</p>
+      </div>
+      <p class="text-right">
+        <span class="block font-display text-3xl text-mountain-pine">{formattedPrice}</span>
+        <span class="text-sm text-worn-stone">{translations.rooms.perNight}</span>
+      </p>
+    </div>
+
+    <div class="mt-4 flex flex-wrap gap-2">
+      <span class="rounded bg-stone-white px-2.5 py-1 text-xs font-medium text-mountain-pine">
+        {t(translations, 'rooms.guests', { count: room.capacity })}
+      </span>
+      <span class="rounded bg-stone-white px-2.5 py-1 text-xs font-medium text-mountain-pine">
+        {t(translations, 'rooms.size', { size: room.sizeM2 })}
+      </span>
+    </div>
+
+    <ul class="mt-4 flex flex-wrap gap-2">
+      {
+        displayAmenities.map((amenityKey: AmenityKey) => (
+          <li>
+            <AmenityTag amenityKey={amenityKey} label={translations.rooms.amenityLabels[amenityKey]} />
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="mt-5 text-sm leading-7 text-mountain-pine/80">{content.description}</p>
+
+    <div class="mt-6 border-t border-light-stone pt-5">
+      <Button href="#contact" variant="outline" class="w-full">{translations.rooms.bookNow}</Button>
+    </div>
+  </div>
+</article>

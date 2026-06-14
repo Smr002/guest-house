@@ -1,0 +1,27 @@
+{
+  "name": "Gjirokastër Guest House",
+  "tagline": "Stay among the stones",
+  "established": 2012,
+  "contact": {
+    "phone": "+355 84 123 456",
+    "whatsapp": "+355841234567",
+    "email": "stay@gjirokastra-guesthouse.com",
+    "instagram": "gjirokastra.guesthouse",
+    "facebook": "gjirokastra.guesthouse"
+  },
+  "location": {
+    "address": "Rruga Ismail Kadare 14",
+    "city": "Gjirokastër",
+    "country": "Albania",
+    "coordinates": {
+      "lat": 40.0758,
+      "lng": 20.1394
+    },
+    "googleMapsUrl": "https://maps.google.com/?q=40.0758,20.1394"
+  },
+  "hours": {
+    "checkIn": "14:00",
+    "checkOut": "11:00",
+    "reception": "08:00-22:00"
+  }
+}
