@@ -21,10 +21,20 @@ const formattedPrice = formatPrice(room.pricePerNight, room.currency, lang);
 const displayAmenities: readonly AmenityKey[] = room.amenities.slice(0, 4);
 const roomImage = getRoomImage(room.id);
 const imageAlt = t(translations, 'accessibility.roomImage', { name: content.name });
+type BestForKey = keyof Translations['rooms']['bestFor'];
+const BEST_FOR_BY_ROOM = {
+  'castle-view': 'couples',
+  'courtyard-suite': 'slowStay',
+  'old-town-double': 'explorers',
+  'family-room': 'families',
+} as const satisfies Readonly<Record<string, BestForKey>>;
+const bestForKey = room.id in BEST_FOR_BY_ROOM
+  ? BEST_FOR_BY_ROOM[room.id as keyof typeof BEST_FOR_BY_ROOM]
+  : 'couples';
 ---
 
-<article class="group overflow-hidden rounded-lg border border-light-stone bg-white shadow-soft transition-transform duration-200 hover:-translate-y-1">
-  <div class="relative h-60 overflow-hidden bg-light-stone">
+<article class="group grid overflow-hidden rounded-lg border border-light-stone bg-white shadow-soft transition-transform duration-200 hover:-translate-y-1 md:grid-cols-[0.85fr_1.15fr]">
+  <div class="relative min-h-72 overflow-hidden bg-light-stone">
     <Image
       src={roomImage}
       alt={imageAlt}
@@ -33,15 +43,24 @@ const imageAlt = t(translations, 'accessibility.roomImage', { name: content.name
       class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
       loading="lazy"
     />
+    {room.featured ? (
+      <span class="absolute left-4 top-4 rounded-full bg-old-brass px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-mountain-pine">
+        {translations.hero.trust.bestRate}
+      </span>
+    ) : null}
   </div>
 
-  <div class="p-6">
-    <div class="flex flex-wrap items-start justify-between gap-4">
+  <div class="flex flex-col p-6">
+    <div class="flex flex-wrap items-start justify-between gap-5">
       <div>
+        <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-valley-green">
+          {translations.rooms.bestForLabel} {translations.rooms.bestFor[bestForKey]}
+        </p>
         <h3 class="text-3xl italic leading-tight text-mountain-pine">{content.name}</h3>
         <p class="mt-2 text-sm leading-6 text-worn-stone">{content.shortDescription}</p>
       </div>
       <p class="text-right">
+        <span class="block text-xs font-semibold uppercase tracking-wide text-worn-stone">{translations.rooms.from}</span>
         <span class="block font-display text-3xl text-mountain-pine">{formattedPrice}</span>
         <span class="text-sm text-worn-stone">{translations.rooms.perNight}</span>
       </p>
@@ -68,8 +87,9 @@ const imageAlt = t(translations, 'accessibility.roomImage', { name: content.name
 
     <p class="mt-5 text-sm leading-7 text-mountain-pine/80">{content.description}</p>
 
-    <div class="mt-6 border-t border-light-stone pt-5">
-      <Button href="#contact" variant="outline" class="w-full">{translations.rooms.bookNow}</Button>
+    <div class="mt-auto flex flex-col gap-3 border-t border-light-stone pt-5 sm:flex-row">
+      <Button href="#contact" variant="primary" class="w-full">{translations.rooms.bookNow}</Button>
+      <Button href="#gallery" variant="outline" class="w-full">{translations.rooms.viewDetails}</Button>
     </div>
   </div>
 </article>

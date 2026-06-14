@@ -1,0 +1,43 @@
+---
+import type { SiteConfig } from '@app-types/site';
+import type { Translations } from '@app-types/translations';
+
+interface Props {
+  translations: Translations;
+  site: SiteConfig;
+}
+
+const { translations, site } = Astro.props;
+const phoneHref = `tel:${site.contact.phone.replaceAll(' ', '')}`;
+const whatsappHref = `https://wa.me/${site.contact.whatsapp.replaceAll('+', '')}`;
+const actions = [
+  {
+    href: '#contact',
+    label: translations.nav.book,
+    icon: 'M7 3v3H5a2 2 0 0 0-2 2v11h18V8a2 2 0 0 0-2-2h-2V3h-2v3H9V3H7Zm12 8H5v6h14v-6Z',
+  },
+  {
+    href: whatsappHref,
+    label: translations.contact.form.whatsapp,
+    icon: 'M12 4a8 8 0 0 0-6.9 12.1L4 20l4-1a8 8 0 1 0 4-15Zm-3 5.2c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.4.5c.6 1 1.4 1.8 2.5 2.4l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.4.6v.4c0 .4-.2.7-.6.9-.5.3-1.1.4-1.7.2-2.8-.8-5-3-5.8-5.7-.2-.6-.1-1.1.1-1.4Z',
+  },
+  {
+    href: phoneHref,
+    label: translations.contact.info.phoneLabel,
+    icon: 'M6.6 3.5 9 3l1.3 4.1-1.5 1c.8 1.7 2.2 3.1 3.9 3.9l1-1.5 4.1 1.3-.5 2.4c-.2.9-1 1.5-1.9 1.4C9.3 15.1 4.9 10.7 4.4 5c-.1-.8.5-1.6 1.4-1.8Z',
+  },
+] as const satisfies readonly { readonly href: string; readonly label: string; readonly icon: string }[];
+---
+
+<nav class="fixed inset-x-3 bottom-3 z-50 grid grid-cols-3 overflow-hidden rounded-lg border border-light-stone bg-stone-white shadow-soft lg:hidden" aria-label={translations.nav.book}>
+  {
+    actions.map((action) => (
+      <a class="flex min-h-14 items-center justify-center gap-1.5 border-r border-light-stone px-2 text-center text-xs font-semibold text-mountain-pine last:border-r-0" href={action.href}>
+        <svg class="h-4 w-4 flex-none text-valley-green" viewBox="0 0 24 24" aria-hidden="true">
+          <path d={action.icon} fill="currentColor"></path>
+        </svg>
+        <span class="truncate">{action.label}</span>
+      </a>
+    ))
+  }
+</nav>

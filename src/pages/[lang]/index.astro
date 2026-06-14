@@ -2,6 +2,7 @@
 import BaseLayout from '@components/layout/BaseLayout.astro';
 import Footer from '@components/layout/Footer.astro';
 import Header from '@components/layout/Header.astro';
+import StickyActionBar from '@components/layout/StickyActionBar.astro';
 import AboutSection from '@components/sections/AboutSection.astro';
 import ContactSection from '@components/sections/ContactSection.astro';
 import ExperiencesSection from '@components/sections/ExperiencesSection.astro';
@@ -9,6 +10,7 @@ import GallerySection from '@components/sections/GallerySection.astro';
 import HeroSection from '@components/sections/HeroSection.astro';
 import RoomsSection from '@components/sections/RoomsSection.astro';
 import TestimonialsSection from '@components/sections/TestimonialsSection.astro';
+import TrustStrip from '@components/sections/TrustStrip.astro';
 import rawExperiencesData from '@data/experiences.json';
 import rawGalleryData from '@data/gallery.json';
 import rawRoomsData from '@data/rooms.json';
@@ -52,7 +54,8 @@ const { gallery } = galleryData;
   <Header lang={lang} translations={translations} currentLocale={localeConfig} site={site} />
 
   <main id="main-content">
-    <HeroSection translations={translations} />
+    <HeroSection translations={translations} rooms={rooms} lang={lang} />
+    <TrustStrip translations={translations} />
     <AboutSection translations={translations} />
     <RoomsSection translations={translations} rooms={rooms} lang={lang} />
     <GallerySection translations={translations} galleryItems={gallery} lang={lang} />
@@ -62,4 +65,5 @@ const { gallery } = galleryData;
   </main>
 
   <Footer translations={translations} lang={lang} site={site} />
+  <StickyActionBar translations={translations} site={site} />
 </BaseLayout>

@@ -12,11 +12,21 @@
     "book": "Réserver"
   },
   "hero": {
+    "eyebrow": "Maison d'hôtes boutique à Gjirokastra",
     "heading": "Séjournez parmi les pierres de Gjirokastër",
     "subheading": "4 chambres · Maison ottomane · Petit-déjeuner inclus",
     "imageAlt": "Cour en pierre d'une maison d'hôtes restaurée à Gjirokastra",
     "ctaBook": "Réserver",
-    "ctaRooms": "Voir les chambres"
+    "ctaRooms": "Voir les chambres",
+    "bookingTitle": "Préparez votre séjour",
+    "checkAvailability": "Vérifier la disponibilité",
+    "directBooking": "Réservation directe, meilleur tarif disponible",
+    "trust": {
+      "rating": "Séjour apprécié des voyageurs",
+      "breakfast": "Petit-déjeuner dans la cour inclus",
+      "oldBazaar": "À 5 min à pied du Vieux Bazar",
+      "bestRate": "Réservez en direct pour le meilleur tarif"
+    }
   },
   "about": {
     "eyebrow": "La maison",
@@ -39,10 +49,18 @@
     "heading": "Nos chambres",
     "subheading": "Quatre chambres, chacune avec son caractère.",
     "perNight": "/ nuit",
+    "from": "À partir de",
     "guests": "{{count}} personnes",
     "size": "{{size}} m²",
     "viewDetails": "Voir la chambre",
     "bookNow": "Réserver cette chambre",
+    "bestForLabel": "Idéal pour",
+    "bestFor": {
+      "couples": "Couples",
+      "families": "Familles",
+      "explorers": "Explorer la vieille ville",
+      "slowStay": "Séjours plus longs"
+    },
     "amenityLabels": {
       "wifi": "Wi-Fi gratuit",
       "private-bathroom": "Salle de bain privée",

@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply min-h-screen antialiased;
+    @apply min-h-screen pb-20 antialiased lg:pb-0;
   }
 
   h1,

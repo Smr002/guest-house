@@ -12,11 +12,21 @@
     "book": "Book a stay"
   },
   "hero": {
+    "eyebrow": "Boutique guest house in Gjirokastra",
     "heading": "Stay among the stones of Gjirokastër",
     "subheading": "4 rooms · Ottoman townhouse · Breakfast included",
     "imageAlt": "Stone courtyard of a restored guest house in Gjirokastra",
     "ctaBook": "Book a stay",
-    "ctaRooms": "View rooms"
+    "ctaRooms": "View rooms",
+    "bookingTitle": "Plan your stay",
+    "checkAvailability": "Check availability",
+    "directBooking": "Direct booking, best available rate",
+    "trust": {
+      "rating": "Guest-loved stay",
+      "breakfast": "Courtyard breakfast included",
+      "oldBazaar": "5 min walk to the Old Bazaar",
+      "bestRate": "Book direct for the best rate"
+    }
   },
   "about": {
     "eyebrow": "The house",
@@ -39,10 +49,18 @@
     "heading": "Our rooms",
     "subheading": "Four rooms, each with its own character.",
     "perNight": "/ night",
+    "from": "From",
     "guests": "{{count}} guests",
     "size": "{{size}} m²",
     "viewDetails": "See room",
     "bookNow": "Book this room",
+    "bestForLabel": "Best for",
+    "bestFor": {
+      "couples": "Couples",
+      "families": "Families",
+      "explorers": "Old town explorers",
+      "slowStay": "Longer stays"
+    },
     "amenityLabels": {
       "wifi": "Free Wi-Fi",
       "private-bathroom": "Private bathroom",

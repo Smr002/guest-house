@@ -1,0 +1,28 @@
+---
+import type { Translations } from '@app-types/translations';
+
+interface Props {
+  translations: Translations;
+}
+
+const { translations } = Astro.props;
+const trustItems = [
+  { value: translations.about.facts.roomsValue, label: translations.rooms.heading },
+  { value: '5 min', label: translations.hero.trust.oldBazaar },
+  { value: translations.about.facts.altitudeValue, label: translations.about.facts.altitude },
+  { value: translations.contact.eyebrow, label: translations.hero.trust.bestRate },
+] as const satisfies readonly { readonly value: string; readonly label: string }[];
+---
+
+<section class="border-y border-light-stone bg-stone-white">
+  <div class="container grid gap-px bg-light-stone sm:grid-cols-2 lg:grid-cols-4">
+    {
+      trustItems.map((item) => (
+        <div class="bg-stone-white px-5 py-6">
+          <p class="font-display text-3xl italic leading-none text-mountain-pine">{item.value}</p>
+          <p class="mt-2 text-sm font-medium leading-6 text-worn-stone">{item.label}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

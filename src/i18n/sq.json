@@ -12,11 +12,21 @@
     "book": "Rezervo qëndrimin"
   },
   "hero": {
+    "eyebrow": "Bujtinë boutique në Gjirokastër",
     "heading": "Qëndroni mes gurëve të Gjirokastrës",
     "subheading": "4 dhoma · Shtëpi osmane · Mëngjes i përfshirë",
     "imageAlt": "Oborr guri i një bujtine të restauruar në Gjirokastër",
     "ctaBook": "Rezervo qëndrimin",
-    "ctaRooms": "Shiko dhomat"
+    "ctaRooms": "Shiko dhomat",
+    "bookingTitle": "Planifikoni qëndrimin",
+    "checkAvailability": "Kontrollo disponueshmërinë",
+    "directBooking": "Rezervim direkt, çmimi më i mirë i disponueshëm",
+    "trust": {
+      "rating": "Qëndrim i dashur nga mysafirët",
+      "breakfast": "Mëngjes në oborr i përfshirë",
+      "oldBazaar": "5 min në këmbë deri te Pazari i Vjetër",
+      "bestRate": "Rezervo direkt për çmimin më të mirë"
+    }
   },
   "about": {
     "eyebrow": "Shtëpia",
@@ -39,10 +49,18 @@
     "heading": "Dhomat tona",
     "subheading": "Katër dhoma, secila me karakterin e vet.",
     "perNight": "/ natë",
+    "from": "Nga",
     "guests": "{{count}} mysafirë",
     "size": "{{size}} m²",
     "viewDetails": "Shiko dhomën",
     "bookNow": "Rezervo këtë dhomë",
+    "bestForLabel": "Më e mira për",
+    "bestFor": {
+      "couples": "Çifte",
+      "families": "Familje",
+      "explorers": "Eksplorues të qytetit të vjetër",
+      "slowStay": "Qëndrime më të gjata"
+    },
     "amenityLabels": {
       "wifi": "Wi-Fi falas",
       "private-bathroom": "Banjë private",
