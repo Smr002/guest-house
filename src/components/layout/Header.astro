@@ -43,7 +43,7 @@ const currentLanguageLabel = `${translations.language.current}: ${currentLocale.
         <LanguageSwitcher currentLang={lang} translations={translations} selectId="lang-select-desktop" />
       </div>
       <a
-        class="inline-flex min-h-10 items-center justify-center rounded bg-old-brass px-5 py-2 text-sm font-semibold text-mountain-pine transition hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-old-brass focus-visible:ring-offset-2"
+        class="inline-flex min-h-10 items-center justify-center rounded-md bg-old-brass px-5 py-2 text-sm font-semibold text-mountain-pine shadow-line transition hover:-translate-y-0.5 hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-old-brass focus-visible:ring-offset-2"
         href="#contact"
       >
         {translations.nav.book}
@@ -52,7 +52,7 @@ const currentLanguageLabel = `${translations.language.current}: ${currentLocale.
 
     <button
       id="menu-toggle"
-      class="inline-flex h-11 w-11 items-center justify-center rounded border border-light-stone text-mountain-pine transition hover:border-valley-green lg:hidden"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-md border border-light-stone text-mountain-pine transition hover:border-valley-green lg:hidden"
       type="button"
       aria-controls="mobile-menu"
       aria-expanded="false"
@@ -79,7 +79,7 @@ const currentLanguageLabel = `${translations.language.current}: ${currentLocale.
       </nav>
       <div class="flex flex-wrap items-center gap-3">
         <LanguageSwitcher currentLang={lang} translations={translations} selectId="lang-select-mobile" />
-        <a class="rounded bg-old-brass px-5 py-3 text-sm font-semibold text-mountain-pine" href="#contact">
+        <a class="rounded-md bg-old-brass px-5 py-3 text-sm font-semibold text-mountain-pine" href="#contact">
           {translations.nav.book}
         </a>
       </div>

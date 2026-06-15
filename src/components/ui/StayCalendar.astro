@@ -1,0 +1,314 @@
+---
+import type { SupportedLocale } from '@app-types/i18n';
+import type { Translations } from '@app-types/translations';
+
+interface Props {
+  translations: Translations;
+  lang: SupportedLocale;
+}
+
+const { translations, lang } = Astro.props;
+---
+
+<div
+  class="rounded-md border border-light-stone bg-stone-white p-3 shadow-line"
+  data-stay-calendar
+  data-locale={lang}
+  data-night-label={translations.calendar.night}
+  data-nights-label={translations.calendar.nights}
+>
+  <div class="mb-3 flex items-center justify-between gap-3">
+    <p class="text-sm font-semibold text-mountain-pine">{translations.calendar.title}</p>
+    <div class="flex items-center gap-1">
+      <button
+        type="button"
+        class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-light-stone bg-white text-mountain-pine transition hover:border-valley-green focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-old-brass"
+        aria-label={translations.calendar.previousMonth}
+        data-calendar-prev
+      >
+        <svg class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m15 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+      <button
+        type="button"
+        class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-light-stone bg-white text-mountain-pine transition hover:border-valley-green focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-old-brass"
+        aria-label={translations.calendar.nextMonth}
+        data-calendar-next
+      >
+        <svg class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mb-3 text-center font-display text-2xl italic leading-none text-mountain-pine" data-calendar-title></div>
+  <div class="grid grid-cols-7 gap-1 text-center text-[0.68rem] font-semibold uppercase tracking-wide text-worn-stone" data-calendar-weekdays></div>
+  <div class="mt-2 grid grid-cols-7 gap-1" data-calendar-grid></div>
+
+  <div class="mt-4 grid gap-2 sm:grid-cols-2">
+    <div class="rounded border border-light-stone bg-white px-3 py-2">
+      <p class="text-[0.68rem] font-semibold uppercase tracking-wide text-worn-stone">{translations.contact.form.checkin}</p>
+      <p class="mt-1 min-h-5 text-sm font-semibold text-mountain-pine" data-calendar-start-display>-</p>
+    </div>
+    <div class="rounded border border-light-stone bg-white px-3 py-2">
+      <p class="text-[0.68rem] font-semibold uppercase tracking-wide text-worn-stone">{translations.contact.form.checkout}</p>
+      <p class="mt-1 min-h-5 text-sm font-semibold text-mountain-pine" data-calendar-end-display>-</p>
+    </div>
+  </div>
+
+  <p class="mt-3 hidden rounded-md bg-clay-red/10 px-3 py-2 text-sm font-medium text-clay-red" data-calendar-error>
+    {translations.calendar.error}
+  </p>
+  <p class="mt-3 hidden text-sm font-semibold text-valley-green" data-calendar-nights></p>
+
+  <input type="hidden" name="checkin" data-calendar-start-input />
+  <input type="hidden" name="checkout" data-calendar-end-input />
+</div>
+
+<script lang="ts" is:inline>
+  function registerStayCalendar() {
+    const DAY_MS = 24 * 60 * 60 * 1000;
+
+    function pad(value) {
+      return String(value).padStart(2, '0');
+    }
+
+    function toInputValue(date) {
+      return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+    }
+
+    function parseInputValue(value) {
+      const parts = value.split('-').map(Number);
+      if (parts.length !== 3 || parts.some(Number.isNaN)) {
+        return null;
+      }
+
+      return new Date(parts[0], parts[1] - 1, parts[2]);
+    }
+
+    function startOfDay(date) {
+      return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    }
+
+    function isSameDay(first, second) {
+      return first !== null && second !== null && toInputValue(first) === toInputValue(second);
+    }
+
+    function isBetween(date, start, end) {
+      return start !== null && end !== null && date > start && date < end;
+    }
+
+    function formatDisplayDate(date, locale) {
+      return new Intl.DateTimeFormat(locale, {
+        month: 'short',
+        day: 'numeric',
+      }).format(date);
+    }
+
+    function initCalendar(root) {
+      if (!(root instanceof HTMLElement) || root.dataset['initialized'] === 'true') {
+        return;
+      }
+
+      root.dataset['initialized'] = 'true';
+      const locale = root.dataset['locale'] || document.documentElement.lang || 'en';
+      const title = root.querySelector('[data-calendar-title]');
+      const weekdays = root.querySelector('[data-calendar-weekdays]');
+      const grid = root.querySelector('[data-calendar-grid]');
+      const previous = root.querySelector('[data-calendar-prev]');
+      const next = root.querySelector('[data-calendar-next]');
+      const startInput = root.querySelector('[data-calendar-start-input]');
+      const endInput = root.querySelector('[data-calendar-end-input]');
+      const startDisplay = root.querySelector('[data-calendar-start-display]');
+      const endDisplay = root.querySelector('[data-calendar-end-display]');
+      const error = root.querySelector('[data-calendar-error]');
+      const nightsDisplay = root.querySelector('[data-calendar-nights]');
+
+      if (
+        !(title instanceof HTMLElement) ||
+        !(weekdays instanceof HTMLElement) ||
+        !(grid instanceof HTMLElement) ||
+        !(previous instanceof HTMLButtonElement) ||
+        !(next instanceof HTMLButtonElement) ||
+        !(startInput instanceof HTMLInputElement) ||
+        !(endInput instanceof HTMLInputElement) ||
+        !(startDisplay instanceof HTMLElement) ||
+        !(endDisplay instanceof HTMLElement) ||
+        !(error instanceof HTMLElement) ||
+        !(nightsDisplay instanceof HTMLElement)
+      ) {
+        return;
+      }
+
+      let checkin = parseInputValue(startInput.value);
+      let checkout = parseInputValue(endInput.value);
+      let viewDate = checkin ?? startOfDay(new Date());
+      viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
+
+      function hideError() {
+        error.classList.add('hidden');
+      }
+
+      function showError() {
+        error.classList.remove('hidden');
+      }
+
+      function syncInputs() {
+        startInput.value = checkin === null ? '' : toInputValue(checkin);
+        endInput.value = checkout === null ? '' : toInputValue(checkout);
+        startInput.dispatchEvent(new Event('change', { bubbles: true }));
+        endInput.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+
+      function syncFromInputs() {
+        checkin = parseInputValue(startInput.value);
+        checkout = parseInputValue(endInput.value);
+
+        if (checkin !== null && checkout !== null && checkout <= checkin) {
+          checkout = null;
+          endInput.value = '';
+        }
+
+        if (checkin !== null) {
+          viewDate = new Date(checkin.getFullYear(), checkin.getMonth(), 1);
+        }
+
+        render();
+      }
+
+      function renderWeekdays() {
+        weekdays.replaceChildren();
+        const sunday = new Date(2026, 0, 4);
+        for (let index = 0; index < 7; index += 1) {
+          const day = new Date(sunday);
+          day.setDate(sunday.getDate() + index);
+          const label = document.createElement('span');
+          label.textContent = new Intl.DateTimeFormat(locale, { weekday: 'short' }).format(day);
+          weekdays.append(label);
+        }
+      }
+
+      function updateSummary() {
+        startDisplay.textContent = checkin === null ? '-' : formatDisplayDate(checkin, locale);
+        endDisplay.textContent = checkout === null ? '-' : formatDisplayDate(checkout, locale);
+
+        if (checkin !== null && checkout !== null) {
+          const nights = Math.round((checkout.getTime() - checkin.getTime()) / DAY_MS);
+          const label = nights === 1 ? root.dataset['nightLabel'] : root.dataset['nightsLabel'];
+          nightsDisplay.textContent = `${nights} ${label}`;
+          nightsDisplay.classList.remove('hidden');
+          hideError();
+          return;
+        }
+
+        nightsDisplay.classList.add('hidden');
+      }
+
+      function render() {
+        title.textContent = new Intl.DateTimeFormat(locale, {
+          month: 'long',
+          year: 'numeric',
+        }).format(viewDate);
+        grid.replaceChildren();
+
+        const today = startOfDay(new Date());
+        const monthStart = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
+        const daysInMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 0).getDate();
+
+        for (let blank = 0; blank < monthStart.getDay(); blank += 1) {
+          grid.append(document.createElement('span'));
+        }
+
+        for (let dayNumber = 1; dayNumber <= daysInMonth; dayNumber += 1) {
+          const date = new Date(viewDate.getFullYear(), viewDate.getMonth(), dayNumber);
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.textContent = String(dayNumber);
+          button.className =
+            'min-h-9 rounded-md text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-old-brass';
+
+          const disabled = date < today;
+          button.disabled = disabled;
+
+          if (disabled) {
+            button.classList.add('cursor-not-allowed', 'text-worn-stone/40');
+          } else {
+            button.classList.add('text-mountain-pine', 'hover:bg-sky-wash');
+          }
+
+          if (isBetween(date, checkin, checkout)) {
+            button.classList.add('bg-sky-wash');
+          }
+
+          if (isSameDay(date, checkin) || isSameDay(date, checkout)) {
+            button.classList.remove('text-mountain-pine', 'hover:bg-sky-wash');
+            button.classList.add('bg-old-brass', 'text-mountain-pine');
+          }
+
+          button.addEventListener('click', () => {
+            if (checkin === null || (checkin !== null && checkout !== null)) {
+              checkin = date;
+              checkout = null;
+            } else if (date <= checkin) {
+              checkin = date;
+              checkout = null;
+            } else {
+              checkout = date;
+            }
+
+            syncInputs();
+            render();
+          });
+
+          grid.append(button);
+        }
+
+        updateSummary();
+      }
+
+      previous.addEventListener('click', () => {
+        viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() - 1, 1);
+        render();
+      });
+
+      next.addEventListener('click', () => {
+        viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 1);
+        render();
+      });
+
+      startInput.addEventListener('change', syncFromInputs);
+      endInput.addEventListener('change', syncFromInputs);
+
+      const form = root.closest('form');
+      form?.addEventListener(
+        'submit',
+        (event) => {
+          if (startInput.disabled || endInput.disabled) {
+            hideError();
+            return;
+          }
+
+          if (startInput.value !== '' && endInput.value !== '') {
+            hideError();
+            return;
+          }
+
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          showError();
+          root.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        },
+        true,
+      );
+
+      renderWeekdays();
+      render();
+    }
+
+    document.querySelectorAll('[data-stay-calendar]').forEach(initCalendar);
+  }
+
+  registerStayCalendar();
+</script>

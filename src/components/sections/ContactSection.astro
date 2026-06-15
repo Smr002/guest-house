@@ -5,6 +5,7 @@ import type { SiteConfig } from '@app-types/site';
 import type { Translations } from '@app-types/translations';
 import Button from '@components/ui/Button.astro';
 import SectionHeader from '@components/ui/SectionHeader.astro';
+import StayCalendar from '@components/ui/StayCalendar.astro';
 import { getRoomContent } from '@utils/i18n';
 
 interface Props {
@@ -42,8 +43,25 @@ const contactRows = [
     />
 
     <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-      <div class="rounded-lg border border-stone-white bg-stone-white p-6 shadow-soft">
-        <dl class="grid gap-5">
+      <div class="grid gap-5">
+        <div class="rounded-lg border border-stone-white bg-stone-white p-6 shadow-soft">
+          <p class="mb-5 text-xs font-semibold uppercase tracking-wide text-valley-green">{translations.contact.processTitle}</p>
+          <ol class="grid gap-4">
+            {
+              translations.contact.process.map((step: string, index: number) => (
+                <li class="grid grid-cols-[2.25rem_1fr] gap-3">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-full bg-mountain-pine text-sm font-semibold text-stone-white">
+                    {index + 1}
+                  </span>
+                  <span class="pt-1 text-sm leading-6 text-mountain-pine/80">{step}</span>
+                </li>
+              ))
+            }
+          </ol>
+        </div>
+
+        <div class="rounded-lg border border-stone-white bg-stone-white p-6 shadow-soft">
+          <dl class="grid gap-5">
           {
             contactRows.map((row) => (
               <div>
@@ -60,25 +78,32 @@ const contactRows = [
               </div>
             ))
           }
-        </dl>
+          </dl>
 
-        <a
-          class="mt-8 inline-flex min-h-11 w-full items-center justify-center rounded border border-valley-green px-5 py-3 text-sm font-semibold text-valley-green transition hover:bg-valley-green hover:text-stone-white"
-          href={whatsappHref}
-        >
-          {translations.contact.form.whatsapp}
-        </a>
+          <a
+            class="mt-8 inline-flex min-h-11 w-full items-center justify-center rounded-md border border-valley-green px-5 py-3 text-sm font-semibold text-valley-green transition hover:bg-valley-green hover:text-stone-white"
+            href={whatsappHref}
+          >
+            {translations.contact.form.whatsapp}
+          </a>
+        </div>
       </div>
 
       <form
         id="enquiry-form"
-        class="grid gap-4 rounded-lg border border-stone-white bg-stone-white p-6 shadow-soft"
+        class="grid gap-4 rounded-lg border border-stone-white bg-stone-white p-6 shadow-lift"
         action="/api/contact"
         method="post"
         novalidate
         data-success-message={translations.contact.form.success}
         data-error-message={translations.contact.form.error}
       >
+        <div class="mb-1 border-b border-light-stone pb-4">
+          <p class="text-xs font-semibold uppercase tracking-wide text-valley-green">{translations.contact.eyebrow}</p>
+          <p class="mt-2 font-display text-3xl italic leading-tight text-mountain-pine">{translations.hero.bookingTitle}</p>
+          <p class="mt-2 text-sm leading-6 text-worn-stone">{translations.hero.directBooking}</p>
+        </div>
+
         <div class="grid gap-4 md:grid-cols-2">
           <label class="grid gap-2 text-sm font-medium text-mountain-pine">
             <span>{translations.contact.form.name}</span>
@@ -102,26 +127,7 @@ const contactRows = [
           </label>
         </div>
 
-        <div class="grid gap-4 md:grid-cols-2">
-          <label class="grid gap-2 text-sm font-medium text-mountain-pine">
-            <span>{translations.contact.form.checkin}</span>
-            <input
-              class="min-h-11 rounded border border-light-stone px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-old-brass"
-              type="date"
-              name="checkin"
-              required
-            />
-          </label>
-          <label class="grid gap-2 text-sm font-medium text-mountain-pine">
-            <span>{translations.contact.form.checkout}</span>
-            <input
-              class="min-h-11 rounded border border-light-stone px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-old-brass"
-              type="date"
-              name="checkout"
-              required
-            />
-          </label>
-        </div>
+        <StayCalendar translations={translations} lang={lang} />
 
         <div class="grid gap-4 md:grid-cols-2">
           <label class="grid gap-2 text-sm font-medium text-mountain-pine">
@@ -171,6 +177,55 @@ const contactRows = [
 <script lang="ts" is:inline>
   const form = /** @type {HTMLFormElement | null} */ (document.querySelector('#enquiry-form'));
   const statusElement = /** @type {HTMLParagraphElement | null} */ (document.querySelector('#form-status'));
+  const stayEnquiryForm = /** @type {HTMLFormElement | null} */ (document.querySelector('[data-stay-enquiry-form]'));
+  const contactSection = /** @type {HTMLElement | null} */ (document.querySelector('#contact'));
+  const desktopDateQuery = window.matchMedia('(min-width: 768px)');
+
+  function setFormValue(targetForm, name, value) {
+    const field = targetForm?.elements.namedItem(name);
+    if (field instanceof HTMLInputElement || field instanceof HTMLSelectElement || field instanceof HTMLTextAreaElement) {
+      field.value = value;
+      field.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  }
+
+  function copyStayValues(formData) {
+    if (form === null) {
+      return;
+    }
+
+    ['checkin', 'checkout', 'guests', 'room'].forEach((fieldName) => {
+      const value = formData.getAll(fieldName).find((entry) => String(entry).trim() !== '');
+      if (typeof value === 'string') {
+        setFormValue(form, fieldName, value);
+      }
+    });
+  }
+
+  function setDisabled(elements, isDisabled) {
+    elements.forEach((element) => {
+      if (element instanceof HTMLInputElement || element instanceof HTMLSelectElement || element instanceof HTMLButtonElement) {
+        element.disabled = isDisabled;
+      }
+    });
+  }
+
+  function syncResponsiveHeroDates() {
+    const useDesktopCalendar = desktopDateQuery.matches;
+    setDisabled(document.querySelectorAll('[data-mobile-stay-fields] input'), useDesktopCalendar);
+    setDisabled(document.querySelectorAll('[data-desktop-stay-calendar] input'), !useDesktopCalendar);
+  }
+
+  function focusEnquiryForm() {
+    const nameField = form?.elements.namedItem('name');
+    if (nameField instanceof HTMLInputElement) {
+      window.setTimeout(() => nameField.focus(), 350);
+    }
+  }
+
+  function scrollToContact() {
+    contactSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
   function formDataToPayload(formData) {
     const payload = {};
@@ -189,6 +244,36 @@ const contactRows = [
     statusElement.classList.remove('hidden', 'text-red-700', 'text-valley-green');
     statusElement.classList.add(isSuccess ? 'text-valley-green' : 'text-red-700');
   }
+
+  const today = new Date().toISOString().slice(0, 10);
+  document.querySelectorAll('input[type="date"]').forEach((input) => {
+    if (input instanceof HTMLInputElement && input.min === '') {
+      input.min = today;
+    }
+  });
+  syncResponsiveHeroDates();
+  desktopDateQuery.addEventListener('change', syncResponsiveHeroDates);
+
+  stayEnquiryForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    copyStayValues(new FormData(stayEnquiryForm));
+    scrollToContact();
+    focusEnquiryForm();
+  });
+
+  document.querySelectorAll('[data-enquiry-room]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const room = link instanceof HTMLElement ? link.dataset['enquiryRoom'] : '';
+      if (!room || form === null) {
+        return;
+      }
+
+      event.preventDefault();
+      setFormValue(form, 'room', room);
+      scrollToContact();
+      focusEnquiryForm();
+    });
+  });
 
   form?.addEventListener('submit', async (event) => {
     event.preventDefault();

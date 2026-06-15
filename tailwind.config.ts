@@ -32,6 +32,8 @@ const tailwindConfig: Config = {
       },
       boxShadow: {
         soft: '0 18px 45px rgb(45 58 53 / 0.12)',
+        lift: '0 22px 60px rgb(45 58 53 / 0.16)',
+        line: '0 1px 0 rgb(45 58 53 / 0.08)',
       },
     },
   },

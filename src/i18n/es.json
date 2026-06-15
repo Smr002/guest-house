@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Gjirokastër Guest House - Alójate en la Ciudad de Piedra de Albania",
-    "description": "Una casa otomana restaurada en Gjirokastra, ciudad Patrimonio Mundial de la UNESCO. 4 habitaciones, desayuno en el patio, vistas al castillo. Reserva directa."
+    "description": "Una casa otomana restaurada en Gjirokastra, ciudad Patrimonio Mundial de la UNESCO. 4 habitaciones, desayuno en el patio, vistas al castillo. Contacta al propietario para consultar disponibilidad."
   },
   "nav": {
     "home": "Inicio",
@@ -9,23 +9,23 @@
     "gallery": "Galería",
     "experiences": "Experiencias",
     "contact": "Contacto",
-    "book": "Reservar estancia"
+    "book": "Enviar consulta"
   },
   "hero": {
     "eyebrow": "Casa boutique en Gjirokastra",
     "heading": "Alójate entre las piedras de Gjirokastër",
     "subheading": "4 habitaciones · Casa otomana · Desayuno incluido",
     "imageAlt": "Patio de piedra de una casa de huéspedes restaurada en Gjirokastra",
-    "ctaBook": "Reservar estancia",
+    "ctaBook": "Enviar consulta de estancia",
     "ctaRooms": "Ver habitaciones",
     "bookingTitle": "Planifica tu estancia",
-    "checkAvailability": "Consultar disponibilidad",
-    "directBooking": "Reserva directa, mejor tarifa disponible",
+    "checkAvailability": "Pedir al propietario que revise fechas",
+    "directBooking": "Elige tus fechas y habitación preferida. El propietario confirmará la disponibilidad por mensaje.",
     "trust": {
       "rating": "Estancia muy apreciada",
       "breakfast": "Desayuno en el patio incluido",
       "oldBazaar": "A 5 min a pie del Antiguo Bazar",
-      "bestRate": "Reserva directa para la mejor tarifa"
+      "bestRate": "El propietario confirma la disponibilidad"
     }
   },
   "about": {
@@ -52,8 +52,8 @@
     "from": "Desde",
     "guests": "{{count}} huéspedes",
     "size": "{{size}} m²",
-    "viewDetails": "Ver habitación",
-    "bookNow": "Reservar esta habitación",
+    "viewDetails": "Ver fotos",
+    "bookNow": "Consultar esta habitación",
     "bestForLabel": "Ideal para",
     "bestFor": {
       "couples": "Parejas",
@@ -76,6 +76,13 @@
       "safe": "Caja fuerte",
       "mini-fridge": "Mini nevera"
     }
+  },
+  "trustStrip": {
+    "roomsLabel": "Habitaciones restauradas",
+    "walkLabel": "A pie al Antiguo Bazar",
+    "breakfastLabel": "Desayuno en el patio",
+    "replyValue": "Respuesta del propietario",
+    "replyLabel": "Revisión personal de disponibilidad"
   },
   "gallery": {
     "eyebrow": "Galería",
@@ -111,9 +118,15 @@
     ]
   },
   "contact": {
-    "eyebrow": "Reserva directa",
-    "heading": "Ponte en contacto",
-    "subheading": "Respondemos en pocas horas. Reserva directamente para obtener la mejor tarifa.",
+    "eyebrow": "Contacta al propietario",
+    "heading": "Enviar consulta de estancia",
+    "subheading": "Comparte tus fechas y preferencias. El propietario revisa el calendario y responde directamente.",
+    "processTitle": "Cómo funciona",
+    "process": [
+      "Envía tus fechas y habitación preferida.",
+      "El propietario revisa el calendario de la casa.",
+      "Recibes una respuesta directa con disponibilidad y siguientes pasos."
+    ],
     "info": {
       "addressLabel": "Dirección",
       "phoneLabel": "Teléfono",
@@ -131,11 +144,19 @@
       "room": "Preferencia de habitación",
       "roomAny": "Sin preferencia",
       "message": "Mensaje (opcional)",
-      "submit": "Enviar consulta",
+      "submit": "Enviar consulta al propietario",
       "whatsapp": "Chatear por WhatsApp",
-      "success": "Mensaje enviado. Nos pondremos en contacto pronto.",
+      "success": "Mensaje enviado. El propietario se pondrá en contacto pronto.",
       "error": "Algo salió mal. Inténtalo de nuevo o contáctanos directamente."
     }
+  },
+  "calendar": {
+    "title": "Elige fechas",
+    "previousMonth": "Mes anterior",
+    "nextMonth": "Mes siguiente",
+    "night": "noche",
+    "nights": "noches",
+    "error": "Elige fecha de llegada y salida."
   },
   "footer": {
     "tagline": "Una casa de piedra en la ciudad con más historias de Albania.",
@@ -150,6 +171,8 @@
     "skipToContent": "Saltar al contenido principal",
     "openMenu": "Abrir menú de navegación",
     "closeMenu": "Cerrar menú de navegación",
+    "openGallery": "Abrir imagen de la galería",
+    "closeGallery": "Cerrar imagen de la galería",
     "roomImage": "Foto de {{name}}",
     "galleryImage": "Foto de galería {{index}}"
   }

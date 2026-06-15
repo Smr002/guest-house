@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Gjirokastër Guest House - Stay in Albania's City of Stone",
-    "description": "A restored Ottoman guest house in Gjirokastra, UNESCO World Heritage city. 4 rooms, courtyard breakfast, castle views. Book direct."
+    "description": "A restored Ottoman guest house in Gjirokastra, UNESCO World Heritage city. 4 rooms, courtyard breakfast, castle views. Contact the owner for availability."
   },
   "nav": {
     "home": "Home",
@@ -9,23 +9,23 @@
     "gallery": "Gallery",
     "experiences": "Experiences",
     "contact": "Contact",
-    "book": "Book a stay"
+    "book": "Send enquiry"
   },
   "hero": {
     "eyebrow": "Boutique guest house in Gjirokastra",
     "heading": "Stay among the stones of Gjirokastër",
     "subheading": "4 rooms · Ottoman townhouse · Breakfast included",
     "imageAlt": "Stone courtyard of a restored guest house in Gjirokastra",
-    "ctaBook": "Book a stay",
+    "ctaBook": "Send stay enquiry",
     "ctaRooms": "View rooms",
     "bookingTitle": "Plan your stay",
-    "checkAvailability": "Check availability",
-    "directBooking": "Direct booking, best available rate",
+    "checkAvailability": "Ask owner to check dates",
+    "directBooking": "Choose your dates and room preference. The owner will confirm availability by message.",
     "trust": {
       "rating": "Guest-loved stay",
       "breakfast": "Courtyard breakfast included",
       "oldBazaar": "5 min walk to the Old Bazaar",
-      "bestRate": "Book direct for the best rate"
+      "bestRate": "Owner confirms availability"
     }
   },
   "about": {
@@ -52,8 +52,8 @@
     "from": "From",
     "guests": "{{count}} guests",
     "size": "{{size}} m²",
-    "viewDetails": "See room",
-    "bookNow": "Book this room",
+    "viewDetails": "View photos",
+    "bookNow": "Ask about this room",
     "bestForLabel": "Best for",
     "bestFor": {
       "couples": "Couples",
@@ -76,6 +76,13 @@
       "safe": "In-room safe",
       "mini-fridge": "Mini fridge"
     }
+  },
+  "trustStrip": {
+    "roomsLabel": "Restored rooms",
+    "walkLabel": "Walk to Old Bazaar",
+    "breakfastLabel": "Courtyard breakfast",
+    "replyValue": "Owner reply",
+    "replyLabel": "Personal availability check"
   },
   "gallery": {
     "eyebrow": "Gallery",
@@ -111,9 +118,15 @@
     ]
   },
   "contact": {
-    "eyebrow": "Book direct",
-    "heading": "Get in touch",
-    "subheading": "We respond within a few hours. Book direct for the best rate.",
+    "eyebrow": "Contact the owner",
+    "heading": "Send a stay enquiry",
+    "subheading": "Share your dates and preferences. The owner checks the calendar and replies directly.",
+    "processTitle": "How it works",
+    "process": [
+      "Send your preferred dates and room.",
+      "The owner checks the house calendar.",
+      "You receive a direct reply with availability and next steps."
+    ],
     "info": {
       "addressLabel": "Address",
       "phoneLabel": "Phone",
@@ -131,11 +144,19 @@
       "room": "Room preference",
       "roomAny": "No preference",
       "message": "Message (optional)",
-      "submit": "Send enquiry",
+      "submit": "Send enquiry to owner",
       "whatsapp": "Chat on WhatsApp",
-      "success": "Message sent. We'll be in touch soon.",
+      "success": "Message sent. The owner will be in touch soon.",
       "error": "Something went wrong. Please try again or contact us directly."
     }
+  },
+  "calendar": {
+    "title": "Choose dates",
+    "previousMonth": "Previous month",
+    "nextMonth": "Next month",
+    "night": "night",
+    "nights": "nights",
+    "error": "Choose check-in and check-out dates."
   },
   "footer": {
     "tagline": "A stone house in Albania's most storied city.",
@@ -150,6 +171,8 @@
     "skipToContent": "Skip to main content",
     "openMenu": "Open navigation menu",
     "closeMenu": "Close navigation menu",
+    "openGallery": "Open gallery image",
+    "closeGallery": "Close gallery image",
     "roomImage": "Photo of {{name}}",
     "galleryImage": "Gallery photo {{index}}"
   }

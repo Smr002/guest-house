@@ -24,16 +24,16 @@ const { translations, galleryItems, lang } = Astro.props;
       subheading={translations.gallery.subheading}
     />
 
-    <div class="grid auto-rows-[260px] gap-4 md:grid-cols-4">
+    <div class="grid auto-rows-[230px] gap-4 md:grid-cols-4 lg:auto-rows-[250px]">
       {
         galleryItems.map((item: GalleryItem, index: number) => {
           const content = getRoomContent(item, lang);
           const image = getGalleryImage(item.image);
-          const featuredClass = item.featured ? 'md:col-span-2 md:row-span-2' : '';
+          const featuredClass = index === 0 ? 'md:col-span-2 md:row-span-2' : '';
           const imageLabel = t(translations, 'accessibility.galleryImage', { index: index + 1 });
 
           return (
-            <figure class={`group relative overflow-hidden rounded-lg bg-light-stone ${featuredClass}`}>
+            <figure class={`group relative overflow-hidden rounded-lg bg-light-stone shadow-line ${featuredClass}`}>
               <Image
                 src={image}
                 alt={`${imageLabel}: ${content.alt}`}
@@ -42,7 +42,17 @@ const { translations, galleryItems, lang } = Astro.props;
                 class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 loading="lazy"
               />
-              <figcaption class="absolute inset-x-0 bottom-0 bg-mountain-pine/80 px-4 py-3 text-sm font-medium text-stone-white backdrop-blur-sm">
+              <button
+                type="button"
+                class="absolute inset-0 cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-old-brass"
+                aria-label={`${translations.accessibility.openGallery}: ${content.title}`}
+                data-gallery-trigger
+                data-gallery-title={content.title}
+                data-gallery-alt={`${imageLabel}: ${content.alt}`}
+              >
+                <span class="sr-only">{translations.accessibility.openGallery}</span>
+              </button>
+              <figcaption class="pointer-events-none absolute inset-x-0 bottom-0 bg-mountain-pine/80 px-4 py-3 text-sm font-medium text-stone-white backdrop-blur-sm">
                 {content.title}
               </figcaption>
             </figure>
@@ -51,4 +61,49 @@ const { translations, galleryItems, lang } = Astro.props;
       }
     </div>
   </div>
+
+  <dialog id="gallery-dialog" class="w-[min(92vw,1040px)] rounded-lg bg-stone-white p-0 shadow-lift backdrop:bg-mountain-pine/80">
+    <div class="relative">
+      <button
+        type="button"
+        class="absolute right-3 top-3 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-stone-white/95 text-mountain-pine shadow-soft transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-old-brass"
+        aria-label={translations.accessibility.closeGallery}
+        data-gallery-close
+      >
+        <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      <img class="max-h-[78vh] w-full rounded-t-lg object-contain bg-mountain-pine" alt="" data-gallery-image />
+      <p class="px-5 py-4 text-sm font-medium text-mountain-pine" data-gallery-caption></p>
+    </div>
+  </dialog>
 </section>
+
+<script lang="ts" is:inline>
+  const galleryDialog = /** @type {HTMLDialogElement | null} */ (document.querySelector('#gallery-dialog'));
+  const galleryImage = /** @type {HTMLImageElement | null} */ (document.querySelector('[data-gallery-image]'));
+  const galleryCaption = /** @type {HTMLParagraphElement | null} */ (document.querySelector('[data-gallery-caption]'));
+  const galleryClose = /** @type {HTMLButtonElement | null} */ (document.querySelector('[data-gallery-close]'));
+
+  document.querySelectorAll('[data-gallery-trigger]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      if (!(trigger instanceof HTMLElement) || galleryDialog === null || galleryImage === null || galleryCaption === null) {
+        return;
+      }
+
+      const previewImage = trigger.closest('figure')?.querySelector('img');
+      galleryImage.src = previewImage?.currentSrc || previewImage?.src || '';
+      galleryImage.alt = trigger.dataset['galleryAlt'] ?? '';
+      galleryCaption.textContent = trigger.dataset['galleryTitle'] ?? '';
+      galleryDialog.showModal();
+    });
+  });
+
+  galleryClose?.addEventListener('click', () => galleryDialog?.close());
+  galleryDialog?.addEventListener('click', (event) => {
+    if (event.target === galleryDialog) {
+      galleryDialog.close();
+    }
+  });
+</script>

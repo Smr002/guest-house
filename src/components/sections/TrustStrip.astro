@@ -7,10 +7,10 @@ interface Props {
 
 const { translations } = Astro.props;
 const trustItems = [
-  { value: translations.about.facts.roomsValue, label: translations.rooms.heading },
-  { value: '5 min', label: translations.hero.trust.oldBazaar },
-  { value: translations.about.facts.altitudeValue, label: translations.about.facts.altitude },
-  { value: translations.contact.eyebrow, label: translations.hero.trust.bestRate },
+  { value: translations.about.facts.roomsValue, label: translations.trustStrip.roomsLabel },
+  { value: '5 min', label: translations.trustStrip.walkLabel },
+  { value: translations.about.facts.breakfastValue, label: translations.trustStrip.breakfastLabel },
+  { value: translations.trustStrip.replyValue, label: translations.trustStrip.replyLabel },
 ] as const satisfies readonly { readonly value: string; readonly label: string }[];
 ---
 
@@ -18,7 +18,7 @@ const trustItems = [
   <div class="container grid gap-px bg-light-stone sm:grid-cols-2 lg:grid-cols-4">
     {
       trustItems.map((item) => (
-        <div class="bg-stone-white px-5 py-6">
+        <div class="bg-stone-white px-5 py-6 transition-colors hover:bg-sky-wash/50">
           <p class="font-display text-3xl italic leading-none text-mountain-pine">{item.value}</p>
           <p class="mt-2 text-sm font-medium leading-6 text-worn-stone">{item.label}</p>
         </div>

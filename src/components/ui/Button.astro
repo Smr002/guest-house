@@ -9,11 +9,11 @@ interface Props {
 const { variant, href, type = 'button', class: className = '' } = Astro.props;
 
 const baseClasses =
-  'inline-flex min-h-11 items-center justify-center rounded px-6 py-3 text-sm font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-old-brass focus-visible:ring-offset-2';
-const primaryClasses = 'bg-old-brass text-mountain-pine hover:brightness-95 active:scale-95';
-const ghostClasses = 'border border-stone-white text-stone-white hover:bg-white/10 active:scale-95';
+  'inline-flex min-h-11 items-center justify-center rounded-md px-6 py-3 text-sm font-semibold transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-old-brass focus-visible:ring-offset-2';
+const primaryClasses = 'bg-old-brass text-mountain-pine shadow-line hover:-translate-y-0.5 hover:brightness-95 active:translate-y-0';
+const ghostClasses = 'border border-stone-white/70 text-stone-white hover:-translate-y-0.5 hover:bg-white/10 active:translate-y-0';
 const outlineClasses =
-  'border border-mountain-pine/20 text-mountain-pine hover:border-valley-green hover:text-valley-green active:scale-95';
+  'border border-mountain-pine/20 bg-white text-mountain-pine hover:-translate-y-0.5 hover:border-valley-green hover:text-valley-green active:translate-y-0';
 const variantClasses = {
   primary: primaryClasses,
   ghost: ghostClasses,

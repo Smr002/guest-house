@@ -4,6 +4,7 @@ import type { SupportedLocale } from '@app-types/i18n';
 import type { Room } from '@app-types/room';
 import type { Translations } from '@app-types/translations';
 import Button from '@components/ui/Button.astro';
+import StayCalendar from '@components/ui/StayCalendar.astro';
 import { getRoomContent } from '@utils/i18n';
 import { getHeroImage } from '@utils/images';
 
@@ -32,13 +33,13 @@ const trustItems = [
       class="h-full w-full object-cover"
       loading="eager"
     />
-    <div class="absolute inset-0 bg-gradient-to-r from-mountain-pine via-mountain-pine/72 to-mountain-pine/25"></div>
-    <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-mountain-pine to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-mountain-pine via-mountain-pine/68 to-mountain-pine/20"></div>
+    <div class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-mountain-pine to-transparent"></div>
   </div>
 
-  <div class="container grid min-h-[calc(100svh-4rem)] gap-8 py-12 lg:grid-cols-[1fr_440px] lg:items-center lg:py-16">
-    <div class="max-w-4xl pt-8 lg:pt-0">
-      <p class="mb-4 inline-flex rounded-full bg-stone-white/12 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-old-brass backdrop-blur">
+  <div class="container grid min-h-[calc(100svh-4rem)] gap-8 py-10 lg:grid-cols-[minmax(0,1fr)_440px] lg:items-end lg:py-14">
+    <div class="max-w-4xl pb-4 pt-8 lg:pb-10 lg:pt-0">
+      <p class="mb-4 inline-flex rounded-full border border-stone-white/20 bg-stone-white/12 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-old-brass backdrop-blur">
         {translations.hero.eyebrow}
       </p>
       <div>
@@ -61,33 +62,43 @@ const trustItems = [
     </div>
 
     <form
-      class="rounded-lg border border-stone-white/20 bg-stone-white p-5 shadow-soft lg:p-6"
+      class="rounded-lg border border-stone-white/20 bg-stone-white p-5 shadow-lift lg:p-6"
       action="#contact"
       method="get"
+      data-stay-enquiry-form
     >
       <div class="mb-5">
-        <p class="font-display text-3xl italic text-mountain-pine">{translations.hero.bookingTitle}</p>
-        <p class="mt-1 text-sm text-worn-stone">{translations.hero.directBooking}</p>
+        <p class="text-xs font-semibold uppercase tracking-wide text-valley-green">{translations.contact.eyebrow}</p>
+        <p class="mt-1 font-display text-3xl italic text-mountain-pine">{translations.hero.bookingTitle}</p>
+        <p class="mt-2 text-sm leading-6 text-worn-stone">{translations.hero.directBooking}</p>
       </div>
 
       <div class="grid gap-4">
-        <div class="grid gap-4 sm:grid-cols-2">
-          <label class="grid gap-2 text-sm font-semibold text-mountain-pine">
-            <span>{translations.contact.form.checkin}</span>
-            <input
-              class="min-h-11 rounded border border-light-stone px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-old-brass"
-              type="date"
-              name="checkin"
-            />
-          </label>
-          <label class="grid gap-2 text-sm font-semibold text-mountain-pine">
-            <span>{translations.contact.form.checkout}</span>
-            <input
-              class="min-h-11 rounded border border-light-stone px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-old-brass"
-              type="date"
-              name="checkout"
-            />
-          </label>
+        <div class="grid gap-4 md:hidden" data-mobile-stay-fields>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <label class="grid gap-2 text-sm font-semibold text-mountain-pine">
+              <span>{translations.contact.form.checkin}</span>
+              <input
+                class="min-h-11 rounded border border-light-stone px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-old-brass"
+                type="date"
+                name="checkin"
+                required
+              />
+            </label>
+            <label class="grid gap-2 text-sm font-semibold text-mountain-pine">
+              <span>{translations.contact.form.checkout}</span>
+              <input
+                class="min-h-11 rounded border border-light-stone px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-old-brass"
+                type="date"
+                name="checkout"
+                required
+              />
+            </label>
+          </div>
+        </div>
+
+        <div class="hidden md:block" data-desktop-stay-calendar>
+          <StayCalendar translations={translations} lang={lang} />
         </div>
 
         <div class="grid gap-4 sm:grid-cols-[0.7fr_1.3fr]">

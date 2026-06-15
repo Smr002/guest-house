@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Gjirokastër Guest House - Séjournez dans la Cité de pierre d'Albanie",
-    "description": "Une maison d'hôtes ottomane restaurée à Gjirokastra, ville classée au patrimoine mondial de l'UNESCO. 4 chambres, petit-déjeuner dans la cour, vues sur le château. Réservez en direct."
+    "description": "Une maison d'hôtes ottomane restaurée à Gjirokastra, ville classée au patrimoine mondial de l'UNESCO. 4 chambres, petit-déjeuner dans la cour, vues sur le château. Contactez le propriétaire pour les disponibilités."
   },
   "nav": {
     "home": "Accueil",
@@ -9,23 +9,23 @@
     "gallery": "Galerie",
     "experiences": "Expériences",
     "contact": "Contact",
-    "book": "Réserver"
+    "book": "Envoyer une demande"
   },
   "hero": {
     "eyebrow": "Maison d'hôtes boutique à Gjirokastra",
     "heading": "Séjournez parmi les pierres de Gjirokastër",
     "subheading": "4 chambres · Maison ottomane · Petit-déjeuner inclus",
     "imageAlt": "Cour en pierre d'une maison d'hôtes restaurée à Gjirokastra",
-    "ctaBook": "Réserver",
+    "ctaBook": "Envoyer une demande de séjour",
     "ctaRooms": "Voir les chambres",
     "bookingTitle": "Préparez votre séjour",
-    "checkAvailability": "Vérifier la disponibilité",
-    "directBooking": "Réservation directe, meilleur tarif disponible",
+    "checkAvailability": "Demander au propriétaire de vérifier les dates",
+    "directBooking": "Choisissez vos dates et votre chambre préférée. Le propriétaire confirmera la disponibilité par message.",
     "trust": {
       "rating": "Séjour apprécié des voyageurs",
       "breakfast": "Petit-déjeuner dans la cour inclus",
       "oldBazaar": "À 5 min à pied du Vieux Bazar",
-      "bestRate": "Réservez en direct pour le meilleur tarif"
+      "bestRate": "Le propriétaire confirme la disponibilité"
     }
   },
   "about": {
@@ -52,8 +52,8 @@
     "from": "À partir de",
     "guests": "{{count}} personnes",
     "size": "{{size}} m²",
-    "viewDetails": "Voir la chambre",
-    "bookNow": "Réserver cette chambre",
+    "viewDetails": "Voir les photos",
+    "bookNow": "Demander cette chambre",
     "bestForLabel": "Idéal pour",
     "bestFor": {
       "couples": "Couples",
@@ -76,6 +76,13 @@
       "safe": "Coffre-fort",
       "mini-fridge": "Mini-réfrigérateur"
     }
+  },
+  "trustStrip": {
+    "roomsLabel": "Chambres restaurées",
+    "walkLabel": "À pied du vieux bazar",
+    "breakfastLabel": "Petit-déjeuner dans la cour",
+    "replyValue": "Réponse du propriétaire",
+    "replyLabel": "Vérification personnalisée des disponibilités"
   },
   "gallery": {
     "eyebrow": "Galerie",
@@ -111,9 +118,15 @@
     ]
   },
   "contact": {
-    "eyebrow": "Réserver en direct",
-    "heading": "Contactez-nous",
-    "subheading": "Nous répondons en quelques heures. Réservez en direct pour obtenir le meilleur tarif.",
+    "eyebrow": "Contactez le propriétaire",
+    "heading": "Envoyer une demande de séjour",
+    "subheading": "Partagez vos dates et préférences. Le propriétaire consulte le calendrier et vous répond directement.",
+    "processTitle": "Comment ça marche",
+    "process": [
+      "Envoyez vos dates et votre chambre préférée.",
+      "Le propriétaire vérifie le calendrier de la maison.",
+      "Vous recevez une réponse directe avec les disponibilités et les prochaines étapes."
+    ],
     "info": {
       "addressLabel": "Adresse",
       "phoneLabel": "Téléphone",
@@ -131,11 +144,19 @@
       "room": "Préférence de chambre",
       "roomAny": "Aucune préférence",
       "message": "Message (facultatif)",
-      "submit": "Envoyer la demande",
+      "submit": "Envoyer la demande au propriétaire",
       "whatsapp": "Discuter sur WhatsApp",
-      "success": "Message envoyé. Nous vous répondrons bientôt.",
+      "success": "Message envoyé. Le propriétaire vous répondra bientôt.",
       "error": "Une erreur est survenue. Veuillez réessayer ou nous contacter directement."
     }
+  },
+  "calendar": {
+    "title": "Choisir les dates",
+    "previousMonth": "Mois précédent",
+    "nextMonth": "Mois suivant",
+    "night": "nuit",
+    "nights": "nuits",
+    "error": "Choisissez une date d'arrivée et de départ."
   },
   "footer": {
     "tagline": "Une maison de pierre dans la ville la plus légendaire d'Albanie.",
@@ -150,6 +171,8 @@
     "skipToContent": "Aller au contenu principal",
     "openMenu": "Ouvrir le menu de navigation",
     "closeMenu": "Fermer le menu de navigation",
+    "openGallery": "Ouvrir l'image de la galerie",
+    "closeGallery": "Fermer l'image de la galerie",
     "roomImage": "Photo de {{name}}",
     "galleryImage": "Photo de galerie {{index}}"
   }

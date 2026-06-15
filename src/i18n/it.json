@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Gjirokastër Guest House - Soggiorna nella Città di Pietra dell'Albania",
-    "description": "Una guest house ottomana restaurata a Gjirokastra, città UNESCO. 4 camere, colazione in cortile, vista sul castello. Prenota direttamente."
+    "description": "Una guest house ottomana restaurata a Gjirokastra, città UNESCO. 4 camere, colazione in cortile, vista sul castello. Contatta il proprietario per la disponibilità."
   },
   "nav": {
     "home": "Home",
@@ -9,23 +9,23 @@
     "gallery": "Galleria",
     "experiences": "Esperienze",
     "contact": "Contatti",
-    "book": "Prenota"
+    "book": "Invia richiesta"
   },
   "hero": {
     "eyebrow": "Guest house boutique a Gjirokastra",
     "heading": "Soggiorna tra le pietre di Gjirokastër",
     "subheading": "4 camere · Casa ottomana · Colazione inclusa",
     "imageAlt": "Cortile in pietra di una guest house restaurata a Gjirokastra",
-    "ctaBook": "Prenota",
+    "ctaBook": "Invia richiesta di soggiorno",
     "ctaRooms": "Vedi le camere",
     "bookingTitle": "Organizza il soggiorno",
-    "checkAvailability": "Verifica disponibilità",
-    "directBooking": "Prenotazione diretta, migliore tariffa disponibile",
+    "checkAvailability": "Chiedi al proprietario di controllare le date",
+    "directBooking": "Scegli le date e la camera preferita. Il proprietario confermerà la disponibilità con un messaggio.",
     "trust": {
       "rating": "Soggiorno amato dagli ospiti",
       "breakfast": "Colazione in cortile inclusa",
       "oldBazaar": "5 min a piedi dal Vecchio Bazar",
-      "bestRate": "Prenota diretto per la tariffa migliore"
+      "bestRate": "Il proprietario conferma la disponibilità"
     }
   },
   "about": {
@@ -52,8 +52,8 @@
     "from": "Da",
     "guests": "{{count}} ospiti",
     "size": "{{size}} m²",
-    "viewDetails": "Vedi camera",
-    "bookNow": "Prenota questa camera",
+    "viewDetails": "Vedi foto",
+    "bookNow": "Chiedi di questa camera",
     "bestForLabel": "Ideale per",
     "bestFor": {
       "couples": "Coppie",
@@ -76,6 +76,13 @@
       "safe": "Cassaforte in camera",
       "mini-fridge": "Mini frigo"
     }
+  },
+  "trustStrip": {
+    "roomsLabel": "Camere restaurate",
+    "walkLabel": "A piedi dal Vecchio Bazar",
+    "breakfastLabel": "Colazione nel cortile",
+    "replyValue": "Risposta del proprietario",
+    "replyLabel": "Controllo personale della disponibilità"
   },
   "gallery": {
     "eyebrow": "Galleria",
@@ -111,9 +118,15 @@
     ]
   },
   "contact": {
-    "eyebrow": "Prenota diretto",
-    "heading": "Contattaci",
-    "subheading": "Rispondiamo entro poche ore. Prenota direttamente per la tariffa migliore.",
+    "eyebrow": "Contatta il proprietario",
+    "heading": "Invia richiesta di soggiorno",
+    "subheading": "Condividi date e preferenze. Il proprietario controlla il calendario e risponde direttamente.",
+    "processTitle": "Come funziona",
+    "process": [
+      "Invia date e camera preferita.",
+      "Il proprietario controlla il calendario della casa.",
+      "Ricevi una risposta diretta con disponibilità e prossimi passi."
+    ],
     "info": {
       "addressLabel": "Indirizzo",
       "phoneLabel": "Telefono",
@@ -131,11 +144,19 @@
       "room": "Preferenza camera",
       "roomAny": "Nessuna preferenza",
       "message": "Messaggio (opzionale)",
-      "submit": "Invia richiesta",
+      "submit": "Invia richiesta al proprietario",
       "whatsapp": "Chatta su WhatsApp",
-      "success": "Messaggio inviato. Ti risponderemo presto.",
+      "success": "Messaggio inviato. Il proprietario ti risponderà presto.",
       "error": "Qualcosa è andato storto. Riprova o contattaci direttamente."
     }
+  },
+  "calendar": {
+    "title": "Scegli le date",
+    "previousMonth": "Mese precedente",
+    "nextMonth": "Mese successivo",
+    "night": "notte",
+    "nights": "notti",
+    "error": "Scegli data di arrivo e partenza."
   },
   "footer": {
     "tagline": "Una casa in pietra nella città più ricca di storie dell'Albania.",
@@ -150,6 +171,8 @@
     "skipToContent": "Vai al contenuto principale",
     "openMenu": "Apri il menu di navigazione",
     "closeMenu": "Chiudi il menu di navigazione",
+    "openGallery": "Apri immagine della galleria",
+    "closeGallery": "Chiudi immagine della galleria",
     "roomImage": "Foto di {{name}}",
     "galleryImage": "Foto della galleria {{index}}"
   }

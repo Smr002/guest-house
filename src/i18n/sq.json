@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Gjirokastër Guest House - Qëndroni në Qytetin e Gurtë të Shqipërisë",
-    "description": "Një bujtinë osmane e restauruar në Gjirokastër, qytet i Trashëgimisë Botërore të UNESCO-s. 4 dhoma, mëngjes në oborr, pamje nga kalaja. Rezervoni direkt."
+    "description": "Një bujtinë osmane e restauruar në Gjirokastër, qytet i Trashëgimisë Botërore të UNESCO-s. 4 dhoma, mëngjes në oborr, pamje nga kalaja. Kontaktoni pronarin për disponueshmërinë."
   },
   "nav": {
     "home": "Kreu",
@@ -9,23 +9,23 @@
     "gallery": "Galeria",
     "experiences": "Përvoja",
     "contact": "Kontakt",
-    "book": "Rezervo qëndrimin"
+    "book": "Dërgo kërkesë"
   },
   "hero": {
     "eyebrow": "Bujtinë boutique në Gjirokastër",
     "heading": "Qëndroni mes gurëve të Gjirokastrës",
     "subheading": "4 dhoma · Shtëpi osmane · Mëngjes i përfshirë",
     "imageAlt": "Oborr guri i një bujtine të restauruar në Gjirokastër",
-    "ctaBook": "Rezervo qëndrimin",
+    "ctaBook": "Dërgo kërkesë për qëndrim",
     "ctaRooms": "Shiko dhomat",
     "bookingTitle": "Planifikoni qëndrimin",
-    "checkAvailability": "Kontrollo disponueshmërinë",
-    "directBooking": "Rezervim direkt, çmimi më i mirë i disponueshëm",
+    "checkAvailability": "Pyet pronarin për datat",
+    "directBooking": "Zgjidhni datat dhe dhomën e preferuar. Pronari do të konfirmojë disponueshmërinë me mesazh.",
     "trust": {
       "rating": "Qëndrim i dashur nga mysafirët",
       "breakfast": "Mëngjes në oborr i përfshirë",
       "oldBazaar": "5 min në këmbë deri te Pazari i Vjetër",
-      "bestRate": "Rezervo direkt për çmimin më të mirë"
+      "bestRate": "Pronari konfirmon disponueshmërinë"
     }
   },
   "about": {
@@ -52,8 +52,8 @@
     "from": "Nga",
     "guests": "{{count}} mysafirë",
     "size": "{{size}} m²",
-    "viewDetails": "Shiko dhomën",
-    "bookNow": "Rezervo këtë dhomë",
+    "viewDetails": "Shiko fotot",
+    "bookNow": "Pyet për këtë dhomë",
     "bestForLabel": "Më e mira për",
     "bestFor": {
       "couples": "Çifte",
@@ -76,6 +76,13 @@
       "safe": "Kasafortë në dhomë",
       "mini-fridge": "Mini frigorifer"
     }
+  },
+  "trustStrip": {
+    "roomsLabel": "Dhoma të restauruara",
+    "walkLabel": "Ecje deri te Pazari i Vjetër",
+    "breakfastLabel": "Mëngjes në oborr",
+    "replyValue": "Përgjigje nga pronari",
+    "replyLabel": "Kontroll personal i disponueshmërisë"
   },
   "gallery": {
     "eyebrow": "Galeria",
@@ -111,9 +118,15 @@
     ]
   },
   "contact": {
-    "eyebrow": "Rezervo direkt",
-    "heading": "Na kontaktoni",
-    "subheading": "Përgjigjemi brenda pak orësh. Rezervoni direkt për çmimin më të mirë.",
+    "eyebrow": "Kontaktoni pronarin",
+    "heading": "Dërgo kërkesë për qëndrim",
+    "subheading": "Ndani datat dhe preferencat tuaja. Pronari kontrollon kalendarin dhe përgjigjet drejtpërdrejt.",
+    "processTitle": "Si funksionon",
+    "process": [
+      "Dërgoni datat dhe dhomën e preferuar.",
+      "Pronari kontrollon kalendarin e shtëpisë.",
+      "Merrni përgjigje direkte me disponueshmërinë dhe hapat e radhës."
+    ],
     "info": {
       "addressLabel": "Adresa",
       "phoneLabel": "Telefoni",
@@ -131,11 +144,19 @@
       "room": "Preferenca e dhomës",
       "roomAny": "Pa preferencë",
       "message": "Mesazh (opsional)",
-      "submit": "Dërgo kërkesën",
+      "submit": "Dërgo kërkesën te pronari",
       "whatsapp": "Bisedo në WhatsApp",
-      "success": "Mesazhi u dërgua. Do t'ju kontaktojmë së shpejti.",
+      "success": "Mesazhi u dërgua. Pronari do t'ju kontaktojë së shpejti.",
       "error": "Diçka shkoi keq. Ju lutemi provoni përsëri ose na kontaktoni direkt."
     }
+  },
+  "calendar": {
+    "title": "Zgjidh datat",
+    "previousMonth": "Muaji i mëparshëm",
+    "nextMonth": "Muaji tjetër",
+    "night": "natë",
+    "nights": "net",
+    "error": "Zgjidhni datën e mbërritjes dhe largimit."
   },
   "footer": {
     "tagline": "Një shtëpi guri në qytetin më tregimtar të Shqipërisë.",
@@ -150,6 +171,8 @@
     "skipToContent": "Kalo te përmbajtja kryesore",
     "openMenu": "Hap menunë e navigimit",
     "closeMenu": "Mbyll menunë e navigimit",
+    "openGallery": "Hap foton e galerisë",
+    "closeGallery": "Mbyll foton e galerisë",
     "roomImage": "Foto e {{name}}",
     "galleryImage": "Foto galerie {{index}}"
   }
